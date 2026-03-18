@@ -1,4 +1,0 @@
-{
-  "code": "cannot_create_tracker",
-  "message": "Tracker ticket can't be created as related_ticket_ids are invalid"
-}

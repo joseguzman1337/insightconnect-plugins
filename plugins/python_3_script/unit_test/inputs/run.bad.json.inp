@@ -1,7 +1,0 @@
-{
-  "function": "def run(params={}):\n\treturn",
-  "input": {
-    "some_input": "bad"
-  },
-  "timeout": 1
-}

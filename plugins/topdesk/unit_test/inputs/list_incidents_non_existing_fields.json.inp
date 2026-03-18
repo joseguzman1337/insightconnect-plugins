@@ -1,8 +1,0 @@
-{
-      "all": true,
-      "fields": "non_existing_field",
-      "pageSize": 2,
-      "pageStart": 3,
-      "query": "status==firstLine",
-      "sort": "number:desc"
-}

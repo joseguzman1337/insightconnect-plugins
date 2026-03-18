@@ -1,8 +1,0 @@
-{
-  "status_code": "200",
-  "status_message": "Results found.",
-  "results": [
-    "example.com",
-    "example2.com"
-  ]
-}

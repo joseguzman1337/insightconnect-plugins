@@ -1,9 +1,0 @@
-{
-  "urls": [
-    {
-      "encodedUrl": "invalid_url",
-      "success": false,
-      "error": "Invalid URL - encoded URL is not a URL Defense URL"
-    }
-  ]
-}

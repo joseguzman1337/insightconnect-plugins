@@ -1,8 +1,0 @@
-{
-  "comment": "This is comment",
-  "propertiesCertificateSigner": "Example signer",
-  "propertiesFileName": "sample.pdf",
-  "propertiesPath": "./dir/path/",
-  "propertiesSha256": "050c194cbbb",
-  "type": "sha256"
-}

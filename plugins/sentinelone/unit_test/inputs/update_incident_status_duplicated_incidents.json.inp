@@ -1,8 +1,0 @@
-{
-  "incidentStatus": "resolved",
-  "incidentIds": [
-    "valid_threat_id_1",
-    "valid_threat_id_1"
-  ],
-  "type": "threats"
-}

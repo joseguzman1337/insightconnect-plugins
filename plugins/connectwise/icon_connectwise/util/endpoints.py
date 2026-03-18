@@ -1,6 +1,0 @@
-BASE_URL = "https://api-{region}.myconnectwise.net/v4_6_release/apis/3.0"
-SERVICE_TICKETS_ENDPOINT = "/service/tickets"
-SERVICE_TICKET_ENDPOINT = "/service/tickets/{ticket_id}"
-SERVICE_NOTES_ENDPOINT = "/service/tickets/{ticket_id}/notes"
-SERVICE_NOTE_ENDPOINT = "/service/tickets/{ticket_id}/notes/{note_id}"
-COMPANIES_ENDPOINT = "/company/companies/{company_id}"

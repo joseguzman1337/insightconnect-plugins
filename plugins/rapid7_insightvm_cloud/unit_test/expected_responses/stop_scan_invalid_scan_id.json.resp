@@ -1,5 +1,0 @@
-{
-    "success": false,
-    "status_code": 200,
-    "message": "Failed to stop scan with ID 'invalid scan id'. Status of scan is None"
-}

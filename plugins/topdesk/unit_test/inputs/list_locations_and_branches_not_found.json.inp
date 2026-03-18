@@ -1,4 +1,0 @@
-{
-  "pageSize": 5,
-  "query": "branch.name==not_found"
-}

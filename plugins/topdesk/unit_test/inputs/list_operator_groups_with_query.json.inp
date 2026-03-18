@@ -1,6 +1,0 @@
-{
-  "fields": "",
-  "pageSize": 100,
-  "query": "groupName=='Test Group'",
-  "start": 1
-}

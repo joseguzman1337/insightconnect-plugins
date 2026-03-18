@@ -1,5 +1,0 @@
-{
-  "targetScope": "account",
-  "threatId": "12345678",
-  "whiteningOption": "file-type"
-}

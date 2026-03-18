@@ -1,5 +1,0 @@
-{
-  "action": "block",
-  "sender": "bad_email",
-  "to": "test2@rapid7.com"
-}

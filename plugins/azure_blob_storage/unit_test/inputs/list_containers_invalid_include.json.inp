@@ -1,8 +1,0 @@
-{
-  "include": [
-    "metadata",
-    "sysxastem",
-    "deleted"
-  ],
-  "prefix": "xyz"
-}

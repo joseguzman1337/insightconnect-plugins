@@ -1,6 +1,0 @@
-{
-  "description": "my updated description plugin action",
-  "incidentNumber": "INC000000000526",
-  "resolutionNote": "Resolve through Rest API",
-  "status": "Resolved"
-}

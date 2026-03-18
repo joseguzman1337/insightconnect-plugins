@@ -1,5 +1,0 @@
-{
-  "filter": "state: 'error'",
-  "limit": 5,
-  "offset": 2
-}

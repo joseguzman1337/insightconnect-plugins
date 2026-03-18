@@ -1,8 +1,0 @@
-{
-  "loginURL": "https://example.com",
-  "clientId": "example-client-id",
-  "clientSecret": {
-    "secretKey": "example-secret-key"
-  },
-  "appType": "External Client App"
-}
