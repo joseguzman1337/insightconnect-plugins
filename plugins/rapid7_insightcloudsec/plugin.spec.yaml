@@ -1,0 +1,613 @@
+plugin_spec_version: v2
+extension: plugin
+products: [insightconnect]
+name: rapid7_insightcloudsec
+title: Rapid7 InsightCloudSec
+description: InsightCloudSec by Rapid7 (formerly DivvyCloud) is a Cloud-Native Security Platform that provides real-time analysis and automated remediation for continuous security and compliance for your multi-cloud environment 
+version: 2.2.0
+connection_version: 2
+supported_versions: ["22.10.19"]
+cloud_ready: true
+vendor: rapid7
+resources:
+  source_url: https://github.com/rapid7/insightconnect-plugins/tree/master/plugins/rapid7_insightcloudsec
+  license_url: https://github.com/rapid7/insightconnect-plugins/blob/master/LICENSE
+  vendor_url: https://www.rapid7.com
+sdk:
+  type: "slim"
+  version: 6.3.6
+  user: nobody
+key_features:
+  - "Create and remove an exemption"
+  - "Detach policy"
+  - "Get resource details"
+  - "Get resource id"
+  - "List resource tags"
+  - "Switch organization"
+  - "List Clouds"
+requirements:
+  - "InsightCloudSec API key"
+troubleshooting:
+  - "This plugin does not contain any troubleshooting information"
+version_history:
+  - "2.2.0 - Added 'list_clouds' action | Unit test added | SDK bump to 6.3.6"
+  - "2.1.2 - Updated SDK to the latest version (v6.3.4) | Updated Documentation "
+  - "2.1.1 - Updated SDK to the latest version (v6.2.3) | Address vulnerabilities"
+  - "2.1.0 - Updated SDK to the latest version | Adding a get resource id functionality"
+  - "2.0.0 - Enable plugin to run in cloud | Remove actions using defective API endpoints"
+  - "1.0.0 - Initial plugin | Add Get Account Details, Get Resource Details, List Resource Tags, Create Exemption, Remove Exemption, Detach Policy, Run Bot on Demand and Switch Organization actions"
+links:
+  - "[Rapid7 InsightCloudSec](https://github.com/rapid7/insightconnect-plugins/tree/master/plugins/rapid7_insightcloudsec)"
+  - "[Docs](https://docs.rapid7.com/insightcloudsec/api/v2/)"
+references:
+  - "[Rapid7 InsightCloudSec](https://www.rapid7.com/products/insightcloudsec/)"
+tags: ["rapid7", "insightcloudsec"]
+support: rapid7
+status: []
+hub_tags:
+  use_cases: [remediation_management, reporting_and_analytics]
+  keywords: [rapid7, insightcloudsec, cloud_enabled]
+  features: []
+types:
+  accountDetails:
+    accountId:
+      title: Account ID
+      description: ID of the cloud account
+      type: string
+      required: false
+    cloudTypeId:
+      title: Cloud Type ID
+      description: ID of the cloud type
+      type: string
+      required: false
+    joinedTimestamp:
+      title: Joined Timestamp
+      description: When the account was joined
+      type: string
+      required: false
+    name:
+      title: Name
+      description: Name of the account
+      type: string
+      required: false
+    payerAccountId:
+      title: Payer Account ID
+      description: ID of the payer account
+      type: string
+      required: false
+    resourceId:
+      title: Resource ID
+      description: Resource ID for the account
+      type: string
+      required: false
+    status:
+      title: Status
+      description: Status of the account
+      type: string
+      required: false
+  exemption:
+    account:
+      title: Account
+      description: Name of the account
+      type: string
+      required: false
+    accountId:
+      title: Account ID
+      description: ID of the account
+      type: integer
+      required: false
+    approver:
+      title: Approver
+      description: The exemption approver
+      type: string
+      required: false
+    botId:
+      title: Bot ID
+      description: ID of the bot
+      type: string
+      required: false
+    botName:
+      title: Bot Name
+      description: Name of the bot
+      type: string
+      required: false
+    cloudTypeId:
+      title: Cloud Type ID
+      description: ID of the cloud type
+      type: integer
+      required: false
+    createDate:
+      title: Create Date
+      description: When the exemption was created
+      type: string
+      required: false
+    creatorId:
+      title: Creator ID
+      description: ID of the creator of the exemption
+      type: integer
+      required: false
+    creatorName:
+      title: Creator Name
+      description: Name of the creator of the exemption
+      type: string
+      required: false
+    enabled:
+      title: Enabled
+      description: Whether the exemption is enabled
+      type: boolean
+      required: false
+    exemptionId:
+      title: Exemption ID
+      description: ID of the exemption
+      type: integer
+      required: false
+    expirationDate:
+      title: Expiration Date
+      description: When the exemption expires
+      type: string
+      required: false
+    insightId:
+      title: Insight ID
+      description: ID of the Insight associated with the exemption
+      type: integer
+      required: false
+    insightName:
+      title: Insight Name
+      description: Name of the Insight associated with the exemption
+      type: string
+      required: false
+    insightSource:
+      title: Insight Source
+      description: Source for the Insight associated with the exemption
+      type: string
+      required: false
+    notes:
+      title: Notes
+      description: Notes
+      type: string
+      required: false
+    organizationId:
+      title: Organization ID
+      description: ID of the organization
+      type: integer
+      required: false
+    providerId:
+      title: Provider ID
+      description: ID of the provider
+      type: integer
+      required: false
+    resourceId:
+      title: Resource ID
+      description: ID of the resource that was exempted
+      type: string
+      required: false
+    resourceIds:
+      title: ResourceIds
+      description: List of resource IDs that have been exempted from the given Insight
+      type: "[]string"
+      required: false
+    resourceName:
+      title: Resource Name
+      description: Name of the resource
+      type: string
+      required: false
+    resourceType:
+      title: Resource Type
+      description: Type of the resource
+      type: string
+      required: false
+    resourceTypeLabel:
+      title: Resource Type Label
+      description: Label of the resource type
+      type: string
+      required: false
+    startDate:
+      title: Start Date
+      description: When the exemption starts
+      type: string
+      required: false
+  resourceDetails:
+    dependencies:
+      title: Dependencies
+      description: Dependencies for the provided resource ID
+      type: object
+      required: false
+    details:
+      title: Details
+      description: Details for the provided resource ID
+      type: object
+      required: false
+    relatedResources:
+      title: Related Resources
+      description: Related resources with the provided resource ID
+      type: object
+      required: false
+  resourceTag:
+    key:
+      title: Key
+      description: Key of the resource tag
+      type: string
+      required: false
+    value:
+      title: Value
+      description: Value of the resource tag
+      type: string
+      required: false
+  resource:
+    resourceId:
+      title: Resource ID
+      description: Resource of the resource ID
+      type: string
+      required: false
+      example: "instance:******:ap-northeast-1:*******************:"
+    resourceType:
+      title: Resource Type
+      description: Resource type of the resource
+      type: string
+      required: false
+      example: "instance"
+    providerId:
+      title: Provider ID
+      description: Provider ID of the resource
+      type: string
+      required: false
+      example: "*******************"
+    name:
+      title: Name
+      description: Name of the resource
+      type: string
+      required: false
+      example: "my-instance-name"
+    accountId:
+      title: Account ID
+      description: Account ID of the resource
+      type: string
+      required: false
+      example: "************"
+    cloudTypeId:
+      title: Cloud type ID
+      description: Cloud type ID of the resource
+      type: string
+      required: false
+      example: "AWS"
+    account:
+      title: Account
+      description: Account of the resource
+      type: string
+      required: false
+      example: "my-account-name"
+  filters:
+    field_name:
+      title: Field Name
+      description: Specifies the name of the output field used for filtering results
+      type: string
+      required: false
+      example: account_id
+    filter_type:
+      title: Filter Type
+      description: Specifies the type of filtering to apply to the selected field
+      type: string
+      required: false
+      example: NOT
+      enum:
+        - EXACT
+        - LIKE
+        - NOT
+        - IN
+        - NOT_IN
+        - BETWEEN
+    filter_value:
+      title: Filter Value
+      description: Specifies the value to apply to the filter for the `field_name` field.
+      required: false
+      type: string
+      example: 463792522299
+    filter_list_value:
+      title: Filter List Value
+      description: Can be used instead of `filter_value` to filter multiple values
+      required: false
+      type: array
+      example: ["AWS_GOV","AWS_CHINA","AWS"]
+  badges:
+    key:
+      title: Key
+      description: Key of the Badge
+      type: string
+      required: false
+      example: environment
+    value:
+      title: Value
+      description: Value of the Badge
+      type: string
+      required: false
+      example: production
+connection:
+  apiKey:
+    title: API Key
+    description: InsightCloudSec API key
+    type: credential_secret_key
+    required: true
+    example: 3395856ce81f2b7382dee72602f798b642f14140
+  url:
+    title: URL
+    description: InsightCloudSec URL
+    type: string
+    required: true
+    example: https://example.com
+  sslVerify:
+    title: SSL Verify
+    description: SSL verify
+    type: boolean
+    required: true
+    default: true
+    example: true
+actions:
+  get_resource_id:
+    title: Get Resource ID
+    description: Gets a InsightCloudSec resource ID from a given search string
+    input:
+      limit:
+        title: Limit
+        description: The maximum number of resources returned if resources match the provided criteria. The value can be between 1 and 1000
+        type: integer
+        required: false
+        example: 0
+      offset:
+        title: Offset
+        description: The number of entries to skip over before returning anything
+        type: integer
+        required: false
+        example: 0
+      search_string:
+        title: Search String
+        description: Partial or full literal string to search for. f.e. you could search for an instance ID, image ID, or resource name
+        type: string
+        required: true
+        example: "i-1234567890"
+    output:
+      resources:
+        title: Resources
+        description: List of the resource IDs
+        type: "[]resource"
+        required: false
+        example: [ { "resource_id": "instance:******:ap-northeast-1:*******************:", "resource_type": "instance", "provider_id": "*******************", "name": "my-instance-name", "account_id": "************", "cloud_type_id": "AWS", "account": "my-account-name" }, { "resource_id": "instance:******:ap-northeast-1:*******************:", "resource_type": "instance", "provider_id": "*******************", "name": "my-instance-name", "account_id": "************", "cloud_type_id": "AWS", "account": "my-account-name" } ]
+      totalCount:
+        title: Total Count
+        description: Number of resources retrieved
+        type: integer
+        required: false
+        example: 2
+  get_resource_details:
+    title: Get Resource Details
+    description: Get all of the details about a resource based on provided resource ID
+    input:
+      resourceId:
+        title: Resource ID
+        description: ID of the resource
+        type: string
+        required: true
+        example: "serviceuser:1:ABC1234567890:"
+    output:
+      resourceDetails:
+        title: Resource Details
+        description: Information about the resource for the provided ID
+        type: resourceDetails
+        required: false
+        example: { "dependencies": { "serviceaccesskey": [ { "id": "ABC123456790", "name": "ABC123456790", "resourceId": "serviceaccesskey:1:ABC123456790:", "type": "serviceaccesskey" } ], "servicepolicy": [ { "id": "ABC0987654321", "name": "Example-Policy", "resourceId": "servicepolicy:1:ABC0987654321:", "type": "servicepolicy" } ] }, "details": { "resourceType": "serviceuser", "serviceuser": { "actionCount": 0, "activeApiKeys": 1, "ageInDays": 10, "common": { "account": "Test", "accountId": "123456789098", "accountStatus": "DEFAULT", "cloud": "AWS", "creationTimestamp": "2022-10-20 11:16:57", "directLink": "https://example.com", "discoveredTimestamp": "2022-10-20 11:33:49", "documents": {}, "lastHarvestedTimestamp": "2022-10-21T08:02:52", "modifiedTimestamp": "2022-10-21 06:03:03", "namespaceId": "arn:aws:iam::123456789098:user/Example-User", "noncompliance": [], "organizationServiceId": 1, "properties": { "propertyList": [] }, "resourceId": "serviceuser:1:ABC1234567890:", "resourceName": "Example-User", "resourceType": "serviceuser" }, "createDate": "2022-10-20 11:16:57", "disabled": false, "inactiveApiKeys": 0, "inlinePolicies": 0, "lastActivity": "2022-10-21 05:46:00", "loginProfile": false, "managedPolicyCount": 0, "passwordLastChanged": "None", "passwordLastUsed": "None", "path": "/", "policyCount": 1, "serviceCount": 0, "twoFactorEnabled": false, "userId": "ABC1234567890", "userName": "Example-User", "wildcardServiceCount": 0 } } }
+  list_resource_tags:
+    title: List Resource Tags
+    description: List resource tags based on provided resource ID
+    input:
+      resourceId:
+        title: Resource ID
+        description: ID of the resource
+        type: string
+        required: true
+        example: "instance:123:example:i-1234567890:"
+    output:
+      resourceTags:
+        title: Resource Tags
+        description: Resource tags for the provided ID
+        type: "[]resourceTag"
+        required: false
+        example: [ { "key": "tag1", "value": "test_tag_1" }, { "key": "tag2", "value": "test_tag_2" }, { "key": "tag3", "value": "test_tag_3" } ]
+  detach_policy:
+    title: Detach Policy
+    description: Detach a policy from a service user, group, or role
+    input:
+      resourceId:
+        title: Resource ID
+        description: ID of the service user, group, or role
+        type: string
+        required: true
+        example: "servicegroup:123:1234567890:"
+      policyResourceId:
+        title: Policy Resource ID
+        description: ID of the policy
+        type: string
+        required: true
+        example: "servicepolicy:123:1234567890:"
+    output:
+      success:
+        title: Success
+        description: Whether the action was successful
+        type: boolean
+        required: true
+        example: true
+  create_exemption:
+    title: Create Exemption
+    description: Create an exemption
+    input:
+      approver:
+        title: Approver
+        description: The exemption approver
+        type: string
+        required: true
+        example: user@example.com
+      insightId:
+        title: Insight ID
+        description: ID for the Insight associated with the exemption
+        type: integer
+        required: true
+        example: 12345
+      insightSource:
+        title: Insight Source
+        description: Source for the Insight associated with the exemption
+        type: string
+        enum:
+        - backoffice
+        - custom
+        required: true
+        example: backoffice
+      resourceIds:
+        title: Resource IDs
+        description: List of IDs for the resources to be exempted from the given Insight
+        type: "[]string"
+        required: true
+        example: ["storagecontainer:123:us-east-1:123456789:"]
+      resourceType:
+        title: Resource Type
+        description: The type of resource being exempted
+        type: string
+        required: true
+        example: storagecontainer
+      startDate:
+        title: Start Date
+        description: Date the exemption begins, e.g. 2022-10-20T00:00:00Z
+        type: date
+        required: true
+        example: 2022-10-20T12:00:00+02:00
+      expirationDate:
+        title: Expiration Date
+        description: Date the exemption ends, e.g. 2022-10-21T00:00:00Z. If none is provided, the default is no expiration
+        type: date
+        required: false
+        example: 2022-10-21T12:00:00+02:00
+      notes:
+        title: Notes
+        description: Any notes or documentation for the exemption
+        type: string
+        required: false
+        example: example note
+    output:
+      exemption:
+        title: Exemption
+        description: Information about a created exemption
+        type: "[]exemption"
+        required: false
+        example: [ { "approver": "user@example.com", "createDate": "2022-10-20 12:00:00+02:00", "creatorId": 123, "enabled": true, "exemptionId": 100, "expirationDate": "2022-10-20 12:00:00+02:00", "insightId": 12345, "insightSource": "backoffice", "notes": "example note", "organizationId": 1, "resourceId": "storagecontainer:123:us-east-1:123456789:", "resourceType": "storagecontainer", "startDate": "2022-10-20 12:00:00+02:00" } ]
+  remove_exemption:
+    title: Remove Exemption
+    description: Delete exemptions for provided IDs
+    input:
+      exemptionIds:
+        title: Exemption IDs
+        description: List of exemption IDs to delete
+        type: "[]integer"
+        required: true
+        example: [111, 222]
+    output:
+      success:
+        title: Success
+        description: Whether the action was successful
+        type: boolean
+        required: true
+        example: true
+  switch_organization:
+    title: Switch Organization
+    description: Change the organization for which all future API requests will be made
+    input:
+      organizationName:
+        title: Organization Name
+        description: Name of the organization
+        type: string
+        required: true
+        example: Example Organization
+    output:
+      success:
+        title: Success
+        description: Whether the action was successful
+        type: boolean
+        required: true
+        example: true
+  list_clouds:
+    title: List Clouds
+    description: Retrieve a list of available configured clouds. This supports filtering and sorting to refine the results based on specified criteria
+    input:
+      filters:
+        title: Filters
+        description: Filter Clouds based on `field_name`, `filter_type`, `filter_value` and `filter_list_value`
+        type: "[]filters"
+        required: false
+        example: [{"field_name": "account_id", "filter_type": "EXACT", "filter_value": "463792522299"}]
+      limit:
+        title: Limit
+        description: The limit on the amount of clouds you wish to receive
+        type: integer
+        required: false
+        example: 3
+      offset:
+        title: Offset
+        description: Offset for cloud results, specifying the starting point for clouds returned
+        type: integer
+        required: false
+        example: 1
+      order_by:
+        title: Order By
+        description: Sort the output based on `field` and `order`. Specified by field name followed by a space then 'ASC' or 'DESC'
+        type: string
+        required: false
+        example: "name ASC"
+      badges:
+        title: Badges
+        description: Specifies the badges used to filter cloud accounts based on key-value pairs
+        type: "[]badges"
+        required: false
+        example: [{"key": "environment", "value": "production"}]
+      badge_filter_operator:
+        title: Badge Filter Operator
+        description: Determines whether the output should contain all badges in `badges` (`AND`), or one of the badges in the list (`OR`)
+        type: string
+        required: false
+        example: AND
+        enum:
+          - OR
+          - AND
+          - ""
+      search_string:
+        title: Search String
+        description: Partial or full literal string to search for. f.e. you could search for an instance ID, image ID, or resource name
+        type: string
+        required: false
+        example: resource_id
+      advanced_search:
+        title: Advanced Search
+        description: Toggle on whether to enable advanced search functionality or not
+        type: boolean
+        required: false
+        example: false
+      empty_badges:
+        title: Empty Badges
+        description: Whether or not to filter on cloud accounts which have zero badges (cloud accounts only)
+        type: boolean
+        required: false
+        example: false
+      exclusion_badges:
+        title: Exclusion Badges
+        description: Specifies the badges to exclude when filtering cloud accounts based on key-value pairs
+        type: "[]badges"
+        required: false
+        example: [{"key": "region", "value": "us-east-1"}]
+    output:
+      clouds:
+        title: Clouds
+        description: The list of clouds retrieved, including details such as account ID, badge count, cloud type, and other information
+        required: true
+        type: "[]object"
+        example: [{"account_id": "463792522299", "badge_count": 7, "cloud_access": None, "cloud_organization_domain_name": "o-03nsxuwv", "cloud_organization_id": "o-03nsxuwv", "cloud_organization_nickname": "The Organization Formerly Known As Test", "cloud_type_id": "AWS", "creation_time": "2021-08-13 21:01:11", "disabled_resource_types": None, "event_driven_harvest_role": "idle", "failed_resource_types": None, "group_resource_id": "divvyorganizationservice:1", "id": 1, "is_platform_managed": false, "last_refreshed": "2025-06-05 08:15:14", "name": "AWS Marketplace", "resource_count": 33, "resource_id": "divvyorganizationservice:1", "role_arn": "OrganizationAccountReadRole", "scan_error": None, "status": "ASSUME_ROLE_FAIL", "strategy_id": 1, "tenant_id": None, "trailblazer_account_in_scope": None, "trailblazer_cloudtrail_trails": []}]
+      total_count:
+        title: Total Count
+        description: Total count of clouds retrieved
+        type: integer
+        required: true
+        example: 1

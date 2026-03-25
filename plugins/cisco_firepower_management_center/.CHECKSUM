@@ -1,0 +1,43 @@
+{
+	"spec": "af1f9deea9dcaaeefc5fdfb6ddcad0db",
+	"manifest": "26e4d87c42c0173f608b902852311791",
+	"setup": "8f9e938a7bf2b9493d9b5359ae6a8afb",
+	"schemas": [
+		{
+			"identifier": "add_address_to_group/schema.py",
+			"hash": "ef8c51094ddfefc5469d41afef875488"
+		},
+		{
+			"identifier": "add_scan_result/schema.py",
+			"hash": "82d79cff009c397dfda9a14cb9b2f5ec"
+		},
+		{
+			"identifier": "block_url_policy/schema.py",
+			"hash": "e2bd3ed2ce9af6cd864970261f1e8e6b"
+		},
+		{
+			"identifier": "bulk_add_scan_result/schema.py",
+			"hash": "d385b2cf82b058a7b65d83973c8ac367"
+		},
+		{
+			"identifier": "check_if_address_in_group/schema.py",
+			"hash": "e371f5e46bce8df73784f840f1470157"
+		},
+		{
+			"identifier": "create_address_object/schema.py",
+			"hash": "3700cd59933579be53293e9a96b8208f"
+		},
+		{
+			"identifier": "delete_address_object/schema.py",
+			"hash": "dbbd9838e797c971f5c5a150dfdaa607"
+		},
+		{
+			"identifier": "remove_address_from_group/schema.py",
+			"hash": "c04d32cd79f2bdf00597aa7cd584fedd"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "25775c6cec8bd73935072b15df42f420"
+		}
+	]
+}

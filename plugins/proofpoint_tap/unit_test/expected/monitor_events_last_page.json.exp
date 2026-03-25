@@ -1,0 +1,37 @@
+{
+  "events": [
+    {
+      "eventType": "messagesDelivered",
+      "threatsInfoMap": [
+        {
+          "threat": "Last Example Threat",
+          "threatID": "9de5069c5afe602b2ea0a04b66beb2c9",
+          "threatStatus": "cleared",
+          "threatTime": "2021-03-20T00:00:00.000Z",
+          "threatType": "url",
+          "threatUrl": "https://example.com/9de5069c5afe602b2ea0a04b66beb2c9",
+          "classification": "phish"
+        }
+      ],
+      "spamScore": 100,
+      "toAddresses": [
+        "user@example.com"
+      ],
+      "subject": "Mail delivery failed: returning message to sender",
+      "fromAddress": [
+        "user@example.com"
+      ],
+      "quarantineFolder": "Phish"
+    }
+  ],
+  "state": {
+    "last_collection_date": "2023-04-04T07:59:00+00:00",
+    "previous_logs_hashes": [
+      "df05d563ebc4c2044954cd88b4debf63d5845b78",
+      "8cebe23f0ce9d4bf19d2a2f700b372108d98b45d",
+      "a115ef30abafb2c72a742537c74cee99f3b2a88a"
+    ]
+  },
+  "has_more_pages": false,
+  "status_code": 200
+}

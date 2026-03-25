@@ -1,0 +1,19 @@
+{
+	"spec": "ac704038478670ceb0369abbe42aa4cf",
+	"manifest": "c41546592ab30b9f259d6b056f484bfb",
+	"setup": "08117154aef8ff2e244100b046854e91",
+	"schemas": [
+		{
+			"identifier": "calculate/schema.py",
+			"hash": "a17426ab91580ae07df6b6a5f45637bf"
+		},
+		{
+			"identifier": "check_address_in_subnet/schema.py",
+			"hash": "19a1dabe7fa1a9ff3abe613089169ffa"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "bd524b567f9638ba1c6f7e0c9e45ff2e"
+		}
+	]
+}

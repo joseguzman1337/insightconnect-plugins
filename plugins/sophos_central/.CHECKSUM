@@ -1,0 +1,87 @@
+{
+	"spec": "a279e014ba26d483979d1c444acea3d0",
+	"manifest": "d6ddcd64d83a1164f3426d1746dce47a",
+	"setup": "70f342d9487baff77a6447a31070e2a5",
+	"schemas": [
+		{
+			"identifier": "add_allowed_item/schema.py",
+			"hash": "7b3dc98604f9908d00fbb1c94346e881"
+		},
+		{
+			"identifier": "add_blocked_item/schema.py",
+			"hash": "63bb896feffe7b50272aea1924099804"
+		},
+		{
+			"identifier": "add_endpoint_group/schema.py",
+			"hash": "7a31674c987bfc011820cbbfe899d04d"
+		},
+		{
+			"identifier": "add_endpoint_to_group/schema.py",
+			"hash": "c5a8345b0a170aa3cb2364df859843be"
+		},
+		{
+			"identifier": "antivirus_scan/schema.py",
+			"hash": "e0a4311c6b73c19cb9fe267ba49d42f0"
+		},
+		{
+			"identifier": "blacklist/schema.py",
+			"hash": "97a0482ae0bdb9fed734fbfe002b840c"
+		},
+		{
+			"identifier": "check_tamper_protection_status/schema.py",
+			"hash": "da954e27ca931f239145fe27c85af18c"
+		},
+		{
+			"identifier": "get_agent_details/schema.py",
+			"hash": "d368e2f8108e0c856aca1e1a9ebebcf2"
+		},
+		{
+			"identifier": "get_alerts/schema.py",
+			"hash": "4fda1998008d0a33ae6a54a83585da42"
+		},
+		{
+			"identifier": "get_allowed_items/schema.py",
+			"hash": "4ea2b48fb20a3b0da82da67d91ead29b"
+		},
+		{
+			"identifier": "get_blocked_items/schema.py",
+			"hash": "b39baf82d06b442337583056230d8d35"
+		},
+		{
+			"identifier": "get_endpoint_group/schema.py",
+			"hash": "6eefaa938349f2f39dde6a1e82fe89d1"
+		},
+		{
+			"identifier": "get_endpoint_groups/schema.py",
+			"hash": "50763fca69f3c52f7e5eeb9fa52a10ed"
+		},
+		{
+			"identifier": "get_endpoints/schema.py",
+			"hash": "79b2f395d0fc570dd2a17cbfc911c03d"
+		},
+		{
+			"identifier": "get_endpoints_in_group/schema.py",
+			"hash": "2aeb1f8ba678472ea140497003ab834a"
+		},
+		{
+			"identifier": "isolate_endpoint/schema.py",
+			"hash": "0e1ffe4c506a32eca6f5c886445cae45"
+		},
+		{
+			"identifier": "remove_allowed_item/schema.py",
+			"hash": "e6a3e8a2fc15872443e68d7b4b27f60f"
+		},
+		{
+			"identifier": "remove_blocked_item/schema.py",
+			"hash": "40c3400ee8ef0f43b41a3f2bd487b00b"
+		},
+		{
+			"identifier": "remove_endpoint_from_group/schema.py",
+			"hash": "72f3c5bbd0ffa5c69f7b49db93b36c5c"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "5c6ed0dbbbee18313b0ac8138e2cd807"
+		}
+	]
+}

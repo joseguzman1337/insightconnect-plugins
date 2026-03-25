@@ -1,0 +1,75 @@
+{
+	"spec": "63bb9e1c5603228258adaf80b9d60092",
+	"manifest": "c3bb4f3dedae0e4981e665aaca08cd3a",
+	"setup": "4eaf77e407dde5e40eea2fc57d79cab8",
+	"schemas": [
+		{
+			"identifier": "add_cve/schema.py",
+			"hash": "6633e5480d13ecae1be99da92046dcad"
+		},
+		{
+			"identifier": "add_manual_alert/schema.py",
+			"hash": "1cd2eaa801dabafa62ab51d107e004ff"
+		},
+		{
+			"identifier": "close_alert/schema.py",
+			"hash": "8bd8bf0407cb9ae7f41010386690fa28"
+		},
+		{
+			"identifier": "delete_cve/schema.py",
+			"hash": "799c6ec14c82c3934ff05765b1004b08"
+		},
+		{
+			"identifier": "enrich_indicator/schema.py",
+			"hash": "c79018bdddab62a42b76c8e42582f709"
+		},
+		{
+			"identifier": "get_alerts/schema.py",
+			"hash": "c22ed317bd9a452b4f61f5e40386451e"
+		},
+		{
+			"identifier": "get_complete_alert_by_id/schema.py",
+			"hash": "cf20c13b00517c5046d41b097b976ad4"
+		},
+		{
+			"identifier": "get_cve_by_id/schema.py",
+			"hash": "126b4110b1643ae03674be492111c7a1"
+		},
+		{
+			"identifier": "get_cve_list/schema.py",
+			"hash": "1c311f9b1aa8237e51cff621d0ca2d82"
+		},
+		{
+			"identifier": "get_cves_for_cyber_term/schema.py",
+			"hash": "4e5c9ddd67e4bae57f67a6e80e326553"
+		},
+		{
+			"identifier": "get_cyber_terms_by_filter/schema.py",
+			"hash": "d561b7b19c3e0162e36068f02db85aa6"
+		},
+		{
+			"identifier": "get_indicator_by_value/schema.py",
+			"hash": "2a8bded330a783ad9157a549b7ee7c0f"
+		},
+		{
+			"identifier": "get_iocs_by_filter/schema.py",
+			"hash": "92383dc5f44e0f01ed5ca6a66f31f191"
+		},
+		{
+			"identifier": "get_iocs_for_cyber_term/schema.py",
+			"hash": "d9c256f4696fb42cefa615d5464e762d"
+		},
+		{
+			"identifier": "takedown_request/schema.py",
+			"hash": "2754de8cd97a108807096e1d460d29c8"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "2def86ba103e4792615905b2e65207ba"
+		},
+		{
+			"identifier": "new_alert/schema.py",
+			"hash": "33b2e2841e3190b2aea8293f25edd6b2"
+		}
+	]
+}

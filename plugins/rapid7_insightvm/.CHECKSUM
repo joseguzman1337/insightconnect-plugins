@@ -1,0 +1,379 @@
+{
+	"spec": "3d13535a296929447867d89ed9e62a12",
+	"manifest": "b56762edf29f3f8c89fe52c7e35fcb4d",
+	"setup": "16ca7051f51178a2cccc4c2259a02a58",
+	"schemas": [
+		{
+			"identifier": "add_scan_engine_pool_engine/schema.py",
+			"hash": "216f7ad0bce76acb3b26d97841eff051"
+		},
+		{
+			"identifier": "add_user_asset_group_access/schema.py",
+			"hash": "dc11932c2fea24587c2fea1d6895714d"
+		},
+		{
+			"identifier": "add_user_site_access/schema.py",
+			"hash": "d88d84d4e30dc8e2a0951836c325f851"
+		},
+		{
+			"identifier": "asset_search/schema.py",
+			"hash": "41d6a2c2a671a53b17b5c7a6b4fd86d5"
+		},
+		{
+			"identifier": "asset_vulnerability_solution/schema.py",
+			"hash": "3532a5d2416ab5e29940fa8f456557aa"
+		},
+		{
+			"identifier": "create_asset_group/schema.py",
+			"hash": "e61fc2c9ce794caa9b98c5bf24085307"
+		},
+		{
+			"identifier": "create_exception/schema.py",
+			"hash": "d5186771aa13e54b51684138465119ec"
+		},
+		{
+			"identifier": "create_scan_engine/schema.py",
+			"hash": "c87ee1fcaa9e389ab6848935b2a76151"
+		},
+		{
+			"identifier": "create_scan_engine_pool/schema.py",
+			"hash": "05c409460e37fdb453362611ce3ffa57"
+		},
+		{
+			"identifier": "create_site/schema.py",
+			"hash": "8f3150690e2ec7e450e67117b19b5c2e"
+		},
+		{
+			"identifier": "create_tag/schema.py",
+			"hash": "98c3f33d88440f8751a1c42b822e8847"
+		},
+		{
+			"identifier": "create_user/schema.py",
+			"hash": "311105cb8a6d56748cee1d80153c8a32"
+		},
+		{
+			"identifier": "delete_asset/schema.py",
+			"hash": "54402aa053b029d74e3d949f105dfaf0"
+		},
+		{
+			"identifier": "delete_asset_group/schema.py",
+			"hash": "1399ca64c1574026df320bc5dd293045"
+		},
+		{
+			"identifier": "delete_exception/schema.py",
+			"hash": "11dd8b913da8101454b0583a05e51709"
+		},
+		{
+			"identifier": "delete_scan_engine/schema.py",
+			"hash": "069a9e387de6eb19b7dd93bd6797d255"
+		},
+		{
+			"identifier": "delete_scan_engine_pool/schema.py",
+			"hash": "6dec4b67bea22e0f471a1b3323e72e4c"
+		},
+		{
+			"identifier": "delete_site/schema.py",
+			"hash": "95f643115c28e27a3f35562d388b7c27"
+		},
+		{
+			"identifier": "delete_tag/schema.py",
+			"hash": "41db7a977bc3beedebd8984657c7ded3"
+		},
+		{
+			"identifier": "delete_user/schema.py",
+			"hash": "e6d61641c04de46059f5874b36ca740e"
+		},
+		{
+			"identifier": "disable_user/schema.py",
+			"hash": "e30853581f622005f03dce522eb0acd3"
+		},
+		{
+			"identifier": "download_report/schema.py",
+			"hash": "07daa44e6d27a260d0d6207effa8089d"
+		},
+		{
+			"identifier": "enable_user/schema.py",
+			"hash": "4226a37e9048d55d060938cbff00b1b5"
+		},
+		{
+			"identifier": "generate_adhoc_sql_report/schema.py",
+			"hash": "32a06f08962221f6135b759635f3fc11"
+		},
+		{
+			"identifier": "generate_shared_secret/schema.py",
+			"hash": "3595f68f0c0c4bb7741160caf4083c72"
+		},
+		{
+			"identifier": "get_asset/schema.py",
+			"hash": "b20f1fde8274ab3b92b1423754f6caf0"
+		},
+		{
+			"identifier": "get_asset_group/schema.py",
+			"hash": "377e66b5983fd157796fc4252869a318"
+		},
+		{
+			"identifier": "get_asset_group_assets/schema.py",
+			"hash": "6756e8332449ac881d7cfaf228ec248f"
+		},
+		{
+			"identifier": "get_asset_groups/schema.py",
+			"hash": "4e34f10a31b4f37423d75e9fc2521bd2"
+		},
+		{
+			"identifier": "get_asset_software/schema.py",
+			"hash": "399c1aa7e9ee49546c2093725bb2a9ca"
+		},
+		{
+			"identifier": "get_asset_tags/schema.py",
+			"hash": "88541b9dec1224da77c619917ee988e5"
+		},
+		{
+			"identifier": "get_asset_vulnerabilities/schema.py",
+			"hash": "d791ec369450ecb5348101dc916184c1"
+		},
+		{
+			"identifier": "get_authentication_source/schema.py",
+			"hash": "bfa67adcdc6b0e8d1cff496aa3019105"
+		},
+		{
+			"identifier": "get_authentication_sources/schema.py",
+			"hash": "6ca6294953c535b40a395c5b6910e13d"
+		},
+		{
+			"identifier": "get_expiring_vulnerability_exceptions/schema.py",
+			"hash": "750479ac093807e4547e421cc589b7a8"
+		},
+		{
+			"identifier": "get_role/schema.py",
+			"hash": "7dc21aee97bcf806461b2fe560c0a5e4"
+		},
+		{
+			"identifier": "get_roles/schema.py",
+			"hash": "507faafd79ed0b8cf056c20e1c406a31"
+		},
+		{
+			"identifier": "get_scan/schema.py",
+			"hash": "d431942e3f4c884550b70bac87a78a56"
+		},
+		{
+			"identifier": "get_scan_assets/schema.py",
+			"hash": "7f4f37b9f78ffe323f72e12c0e42fd7b"
+		},
+		{
+			"identifier": "get_scan_engine/schema.py",
+			"hash": "092dd306c4395d5539ff5a7855fd3d8b"
+		},
+		{
+			"identifier": "get_scan_engine_pool/schema.py",
+			"hash": "efabfce541e07938d26f3577b96471d8"
+		},
+		{
+			"identifier": "get_scan_engine_pools/schema.py",
+			"hash": "24febca4e82cbfa09e10dd6f5195350f"
+		},
+		{
+			"identifier": "get_scan_engines/schema.py",
+			"hash": "729794fcd7a95550b06085c169e835d0"
+		},
+		{
+			"identifier": "get_scans/schema.py",
+			"hash": "dfafc4a7c5a89a387c224e9862afd15e"
+		},
+		{
+			"identifier": "get_site/schema.py",
+			"hash": "1b668d4dbfec0ca53b4cd444f2d3cdc8"
+		},
+		{
+			"identifier": "get_site_assets/schema.py",
+			"hash": "d5f759561f5b72a1002b1e6008e8582d"
+		},
+		{
+			"identifier": "get_sites/schema.py",
+			"hash": "adb9f9c4790695646b4564c877fbc08e"
+		},
+		{
+			"identifier": "get_tag/schema.py",
+			"hash": "48b174579f073ad7b10d1b39eeaa571a"
+		},
+		{
+			"identifier": "get_tag_asset_groups/schema.py",
+			"hash": "ca953eadf17bb2193ae57f7dcd2f84f8"
+		},
+		{
+			"identifier": "get_tag_assets/schema.py",
+			"hash": "5250510873e4dc42a85b8057cae64459"
+		},
+		{
+			"identifier": "get_tag_sites/schema.py",
+			"hash": "53b577b4a3f9e27ada2e95e5e56244d1"
+		},
+		{
+			"identifier": "get_tags/schema.py",
+			"hash": "eb310f74aa59c8d1f4d687b3289b3fad"
+		},
+		{
+			"identifier": "get_user/schema.py",
+			"hash": "f3b71cc674f9ad07b7beaeaa3f6d2a14"
+		},
+		{
+			"identifier": "get_users/schema.py",
+			"hash": "004ec85c6817d5cdf2fc6cf2cb3af418"
+		},
+		{
+			"identifier": "get_vulnerabilities_by_cve/schema.py",
+			"hash": "7740537905e713f3f8fa642467508109"
+		},
+		{
+			"identifier": "get_vulnerability/schema.py",
+			"hash": "9a3c5274f147c6d3c36663d69fd4e8cc"
+		},
+		{
+			"identifier": "get_vulnerability_affected_assets/schema.py",
+			"hash": "0cdb7fdc4ac47104c714804f6aaece9e"
+		},
+		{
+			"identifier": "list_inactive_assets/schema.py",
+			"hash": "6cabadd3452d3621a0a54d7bece53378"
+		},
+		{
+			"identifier": "list_reports/schema.py",
+			"hash": "142f1e558fd699c7f13ea2a813ee9286"
+		},
+		{
+			"identifier": "remove_asset_group_tags/schema.py",
+			"hash": "acc04c91ec1510f77f4fca2433719e0a"
+		},
+		{
+			"identifier": "remove_asset_tag/schema.py",
+			"hash": "0be16633998923aa889c0cf26de9d4fb"
+		},
+		{
+			"identifier": "remove_scan_engine_pool_engine/schema.py",
+			"hash": "5050e30866a3c0ea20180f581add1f54"
+		},
+		{
+			"identifier": "remove_tag_asset_groups/schema.py",
+			"hash": "5d009f084c12368e03072b103cd99359"
+		},
+		{
+			"identifier": "remove_tag_search_criteria/schema.py",
+			"hash": "52288db96a1a96a7003b9e9760314d89"
+		},
+		{
+			"identifier": "remove_tag_sites/schema.py",
+			"hash": "9386161762b44662f591fda6145c3616"
+		},
+		{
+			"identifier": "remove_user_asset_group_access/schema.py",
+			"hash": "8e194debd3c06beb51403287500e9998"
+		},
+		{
+			"identifier": "remove_user_site_access/schema.py",
+			"hash": "07febea7003a9dfc30e38aa3e547dd19"
+		},
+		{
+			"identifier": "review_exception/schema.py",
+			"hash": "a5ed4ab0e7c8f3bdc23bab59928f5a70"
+		},
+		{
+			"identifier": "scan/schema.py",
+			"hash": "593e43dc3f1199ad845f199ed195dd26"
+		},
+		{
+			"identifier": "tag_asset/schema.py",
+			"hash": "fd4b5e9b8a5bc19b04c986feb542d319"
+		},
+		{
+			"identifier": "tag_asset_group/schema.py",
+			"hash": "50911bac8258af6966ba33278bcb57b5"
+		},
+		{
+			"identifier": "tag_assets/schema.py",
+			"hash": "106c3ffc1ba2492a2c360c0e33eb2c40"
+		},
+		{
+			"identifier": "tag_site/schema.py",
+			"hash": "e67c7625885dc902f15f37150a0eaf7e"
+		},
+		{
+			"identifier": "top_remediations/schema.py",
+			"hash": "ef7be6343f45e0faee62d297ec879575"
+		},
+		{
+			"identifier": "update_asset_group_search_criteria/schema.py",
+			"hash": "2602a2b06e786f4e3c45a5aef5834d5e"
+		},
+		{
+			"identifier": "update_scan_status/schema.py",
+			"hash": "58eaf5f925c32fc19dcf437a3de63213"
+		},
+		{
+			"identifier": "update_shared_credential/schema.py",
+			"hash": "095e2376023f6e0bb26e13830ba55f6e"
+		},
+		{
+			"identifier": "update_site/schema.py",
+			"hash": "3ad381ddc51d6a64a4bc3801bd5b83fe"
+		},
+		{
+			"identifier": "update_site_excluded_asset_groups/schema.py",
+			"hash": "2b682b9b64cdb8ccce6c276c28d63758"
+		},
+		{
+			"identifier": "update_site_excluded_targets/schema.py",
+			"hash": "ba0310be29a54928b2785a3247bd527e"
+		},
+		{
+			"identifier": "update_site_included_asset_groups/schema.py",
+			"hash": "eb0fc404656a8a05bb6e9a5fa73784b3"
+		},
+		{
+			"identifier": "update_site_included_targets/schema.py",
+			"hash": "20e507055c51397682aa03a784f56b0c"
+		},
+		{
+			"identifier": "update_site_scan_engine/schema.py",
+			"hash": "eaad3de81f2e7777c6c4bb4d517988b6"
+		},
+		{
+			"identifier": "update_tag_search_criteria/schema.py",
+			"hash": "4c9d3c2f5dd0bf90d9e6e3aedea5e112"
+		},
+		{
+			"identifier": "update_user/schema.py",
+			"hash": "3919419b4e5f69282a5d5f387c3a12dc"
+		},
+		{
+			"identifier": "update_user_asset_group_access/schema.py",
+			"hash": "55d6494a5c6817f7031b9b2191e1be69"
+		},
+		{
+			"identifier": "update_user_role/schema.py",
+			"hash": "d57fd0d9b761531d09163412aaaa272f"
+		},
+		{
+			"identifier": "update_user_site_access/schema.py",
+			"hash": "4f958ab9cb04d5914f6a089e64ba1919"
+		},
+		{
+			"identifier": "update_vulnerability_exception_expiration_date/schema.py",
+			"hash": "c7f62d316597bc8a2ef124ba3f4d28d4"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "cf1872daedca25b02edc6a67fa0bb82c"
+		},
+		{
+			"identifier": "new_exception_request/schema.py",
+			"hash": "edaed44a8fb16881814ea8638d31fae4"
+		},
+		{
+			"identifier": "new_scans/schema.py",
+			"hash": "5633ad3a716609a51da37898ccff3115"
+		},
+		{
+			"identifier": "scan_completion/schema.py",
+			"hash": "b5780e394afc816ab8e8d8a332b0cde1"
+		}
+	]
+}

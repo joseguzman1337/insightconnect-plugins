@@ -1,0 +1,27 @@
+{
+	"spec": "a94a0cf78fbdc01a6c3e38704291d1d0",
+	"manifest": "a9bfe65d9aa0f7f9ab80bdafc847d557",
+	"setup": "882e959c97104d2b6af299fac0ef6c32",
+	"schemas": [
+		{
+			"identifier": "get_anc_endpoint/schema.py",
+			"hash": "c5cb7a9a6f5df8b580855ebb3a144cee"
+		},
+		{
+			"identifier": "quarantine/schema.py",
+			"hash": "64a2c267e3d29a4a3c38e369688c3566"
+		},
+		{
+			"identifier": "query_endpoint/schema.py",
+			"hash": "971acadc8bca350749ec56d24db7dff4"
+		},
+		{
+			"identifier": "remove_from_quarantine/schema.py",
+			"hash": "2013be71c5747554639e59205e953bcf"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "5deb8e3e7a18bb059cbfa8183cba77e0"
+		}
+	]
+}

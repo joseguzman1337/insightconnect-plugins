@@ -1,0 +1,103 @@
+import shlex
+
+import insightconnect_plugin_runtime
+
+from insightconnect_plugin_runtime.exceptions import PluginException
+
+from komand_tr.util.exceptions import ExecCommandError
+from komand_tr.util.utils import exec_command
+from komand_tr.actions.replace.schema import Input, ReplaceInput, ReplaceOutput
+
+# DoS protection
+MAX_TEXT_LENGTH = 10000
+MAX_EXPR_LENGTH = 100
+
+
+class Replace(insightconnect_plugin_runtime.Action):
+    def __init__(self):
+        super(self.__class__, self).__init__(
+            name="replace",
+            description="Runs a tr expression on a string input",
+            input=ReplaceInput(),
+            output=ReplaceOutput(),
+        )
+
+    def run(self, params={}):
+        text = params.get(Input.TEXT)
+        expression = params.get(Input.EXPRESSION)
+
+        self._validate_lengths(text, expression)
+        args = self._parse_and_validate_expression(expression)
+
+        command = ["tr"] + args
+        self.logger.info(f"Replace: Executing command: {' '.join(command)}")
+
+        proc = self._execute_tr(command, text)
+
+        if proc["rcode"] == 0:
+            result = proc["stdout"].decode("utf-8")
+            result = result.rstrip()
+            return {"result": result}
+        else:
+            self.logger.error(
+                f"InsightConnectPluginRuntimeHelper: ExecCommand: Failed to execute: "
+                f"{command}\n{proc['stderr'].decode('utf-8')}"
+            )
+            raise PluginException(
+                cause=f"Text processing failed:\n{proc['stderr'].decode('utf-8')}",
+                assistance="Please see log for details.",
+            )
+
+    def _validate_lengths(self, text: str, expression: str):
+        if len(text) > MAX_TEXT_LENGTH:
+            raise PluginException(
+                cause="Input text exceeds allowed length.",
+                assistance=f"Maximum allowed length is {MAX_TEXT_LENGTH} characters.",
+                data={"max_length": MAX_TEXT_LENGTH},
+            )
+
+        if len(expression) > MAX_EXPR_LENGTH:
+            raise PluginException(
+                cause="Expression exceeds allowed length.",
+                assistance=f"Maximum allowed length is {MAX_EXPR_LENGTH} characters.",
+                data={"max_length": MAX_EXPR_LENGTH},
+            )
+
+    def _parse_and_validate_expression(self, expression: str):
+        try:
+            args = shlex.split(expression)
+        except ValueError:
+            raise PluginException(
+                cause="Invalid expression format.",
+                assistance="Ensure the expression is properly formatted and quoted.",
+                data={"expression": expression},
+            )
+
+        forbidden_args = {"--help", "--version"}
+
+        for arg in args:
+            if arg in forbidden_args:
+                raise PluginException(
+                    cause="Unsupported tr option.",
+                    assistance="The options --help and --version are not allowed.",
+                    data={"argument": arg},
+                )
+
+        if not args:
+            raise PluginException(
+                cause="Missing tr arguments.",
+                assistance="Provide at least STRING1 or valid tr options.",
+                data={},
+            )
+
+        return args
+
+    def _execute_tr(self, command, text):
+        try:
+            return exec_command(command, text, self.logger)
+        except ExecCommandError as error:
+            self.logger.error(f"Replace: Subprocess execution failed: {str(error)}")
+            raise PluginException(
+                cause="Failed to execute text processing command.",
+                assistance="Ensure the 'tr' utility is available in the system.",
+            )

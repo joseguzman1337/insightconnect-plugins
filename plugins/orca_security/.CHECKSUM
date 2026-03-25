@@ -1,0 +1,59 @@
+{
+	"spec": "2cb7c009cabb0300d82818f3621a0be9",
+	"manifest": "c40717b2a3b5277bdfc9e042cb445d2f",
+	"setup": "93400303ff4ab568b8fd6b5893288ba3",
+	"schemas": [
+		{
+			"identifier": "add_user/schema.py",
+			"hash": "a3b7cd2c53f712b71acad88f4bfb8b79"
+		},
+		{
+			"identifier": "delete_user/schema.py",
+			"hash": "938cd66c33f2e6d4a71c836210f95f1e"
+		},
+		{
+			"identifier": "download_malicious_file/schema.py",
+			"hash": "218b6c8165afbf6e2321480e43b5e5ed"
+		},
+		{
+			"identifier": "get_alert_by_id/schema.py",
+			"hash": "e45dd7f83136d80734503ae5c9367e05"
+		},
+		{
+			"identifier": "get_alerts/schema.py",
+			"hash": "1d9bb15fee6eee037cb3ae222881c328"
+		},
+		{
+			"identifier": "get_asset_by_id/schema.py",
+			"hash": "b2b4337fa371ba8961366487c05033ce"
+		},
+		{
+			"identifier": "get_assets/schema.py",
+			"hash": "7686f6b12accfd33fb31249ac452931c"
+		},
+		{
+			"identifier": "get_users/schema.py",
+			"hash": "b8626de87d4e3f95ce793a0880ddd05e"
+		},
+		{
+			"identifier": "update_alert_severity/schema.py",
+			"hash": "e5329a7ce2f892ecde67b3e135f16499"
+		},
+		{
+			"identifier": "update_alert_status/schema.py",
+			"hash": "079e2b0d030c61af2235a2ababd628e8"
+		},
+		{
+			"identifier": "verify_alert/schema.py",
+			"hash": "ebff2295a8fa26d0780acce4968f3d99"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "3c3944c113d0016e2f7ac667ce07bf7d"
+		},
+		{
+			"identifier": "new_alert/schema.py",
+			"hash": "b9d92b05b3a5a317e3f2c1ac00875d0f"
+		}
+	]
+}

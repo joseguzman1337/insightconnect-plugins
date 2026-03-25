@@ -1,0 +1,47 @@
+{
+	"spec": "a246f2e4ec0c03acabc502ca4b9fe382",
+	"manifest": "554610d34a18b6426424f3220e470a8b",
+	"setup": "79edfcb448474d413188f6d85122fbce",
+	"schemas": [
+		{
+			"identifier": "blacklist/schema.py",
+			"hash": "40fab7679ee6ecdb9b3a7ebeaee934fd"
+		},
+		{
+			"identifier": "delete_asset/schema.py",
+			"hash": "48fd7c01e12d596c4f3738324122bfe5"
+		},
+		{
+			"identifier": "get_agent_details/schema.py",
+			"hash": "93dc666ff3c7563457f31544dd100eb4"
+		},
+		{
+			"identifier": "quarantine/schema.py",
+			"hash": "b0473f91c7b8ca2a8f68dc4145f64873"
+		},
+		{
+			"identifier": "search_agents/schema.py",
+			"hash": "0a1e950df80d3ebc6ea031adfc3d072e"
+		},
+		{
+			"identifier": "search_threat_agents/schema.py",
+			"hash": "302bb0edb84a1088dfec38c6cdff179e"
+		},
+		{
+			"identifier": "search_threats/schema.py",
+			"hash": "3b405e58facfbfdfb7766569618ac1c9"
+		},
+		{
+			"identifier": "update_agent/schema.py",
+			"hash": "48a498baa6051e58829ce3759c9faa39"
+		},
+		{
+			"identifier": "update_agent_threat/schema.py",
+			"hash": "75e00504688ee8cac11dc634f95160d9"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "e27e898d68678ac933a6532be11c56cd"
+		}
+	]
+}

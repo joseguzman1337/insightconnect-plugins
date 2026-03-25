@@ -1,0 +1,43 @@
+{
+	"spec": "4f75801fa474db29456abea03678cd7c",
+	"manifest": "5a978e55740c1c5aae9987a12c39b29f",
+	"setup": "c49eecdac5557c8bcd51655a32a1d0ee",
+	"schemas": [
+		{
+			"identifier": "get_observables/schema.py",
+			"hash": "6fc251c56ff7ecd955bc9d642a5a9a5a"
+		},
+		{
+			"identifier": "get_sandbox_report/schema.py",
+			"hash": "3fb450db5b7ba8f67562633ac2555541"
+		},
+		{
+			"identifier": "import_observable/schema.py",
+			"hash": "b0cdc1eaea5deab80271daaef3d1c5bd"
+		},
+		{
+			"identifier": "lookup_hash/schema.py",
+			"hash": "074197bb85fc406c23ebcd544cf9427e"
+		},
+		{
+			"identifier": "lookup_ip/schema.py",
+			"hash": "619e90522f29324b31423086b84519d1"
+		},
+		{
+			"identifier": "lookup_url/schema.py",
+			"hash": "57007992b8610a7cd755e68b1bd66faa"
+		},
+		{
+			"identifier": "submit_file/schema.py",
+			"hash": "f2a0eb2211d44602e6d5ed76478418ff"
+		},
+		{
+			"identifier": "submit_url/schema.py",
+			"hash": "b3d0f67de3d3527eb4ffedd5160cda78"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "eca6e2244428e651995d5b376da349bd"
+		}
+	]
+}

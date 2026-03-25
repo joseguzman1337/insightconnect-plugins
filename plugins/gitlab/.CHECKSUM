@@ -1,0 +1,43 @@
+{
+	"spec": "b8df666d310e2078c1b2abf9a7874a01",
+	"manifest": "3001e0c7131e11b7c392ddb3a33a6a60",
+	"setup": "e23025a5b8479874b2ce9143f03d288a",
+	"schemas": [
+		{
+			"identifier": "block_user/schema.py",
+			"hash": "e2b6cb2d06236909730460b2f2d6c06e"
+		},
+		{
+			"identifier": "create_issue/schema.py",
+			"hash": "42e447251919f23b79be80aeaf2d180c"
+		},
+		{
+			"identifier": "delete_ssh/schema.py",
+			"hash": "dc316739082a2c1321f77175d578e6c9"
+		},
+		{
+			"identifier": "delete_user/schema.py",
+			"hash": "ef3cbf7927a94448fe71c797cce425a9"
+		},
+		{
+			"identifier": "get_user/schema.py",
+			"hash": "53189ffa41c5206ab783854a57c50701"
+		},
+		{
+			"identifier": "list_ssh/schema.py",
+			"hash": "7ad99c5f17f8da50528c6d1af66d14fe"
+		},
+		{
+			"identifier": "unblock_user/schema.py",
+			"hash": "432b7b457c7125f71ff8150850e8886e"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "3353728d5c9cc161ca0e0d1854301362"
+		},
+		{
+			"identifier": "get_new_issue/schema.py",
+			"hash": "defb76ac8485fe55a07119552ea693ed"
+		}
+	]
+}

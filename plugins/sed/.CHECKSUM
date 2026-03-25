@@ -1,0 +1,19 @@
+{
+	"spec": "4543a38703b9e503ee67711db8dba359",
+	"manifest": "8311799c8c47f388371f19ac9fd23228",
+	"setup": "4f8d46dfcfa618d54241502373d2f126",
+	"schemas": [
+		{
+			"identifier": "process_bytes/schema.py",
+			"hash": "598b86c185ac63a81caf614daaf79695"
+		},
+		{
+			"identifier": "process_string/schema.py",
+			"hash": "a041678e6bebc0e200de50b1ef96eca7"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "2a983a9b7aa5dd290ed28e0eb7e0c9c6"
+		}
+	]
+}

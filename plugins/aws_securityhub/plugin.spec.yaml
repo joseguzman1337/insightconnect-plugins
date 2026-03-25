@@ -1,0 +1,1092 @@
+plugin_spec_version: v2
+extension: plugin
+products: [insightconnect]
+name: aws_securityhub
+title: "AWS Security Hub"
+description: "[AWS Security Hub](https://aws.amazon.com/security-hub/) is a comprehensive view of your high-priority security alerts and compliance status across AWS accounts.\n\nThe AWS Security Hub InsightConnect plugin allows you to list and describe security hub-aggregated findings and retrieve SQS messages.\n\nThis plugin utilizes the [AWS Security Hub API](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_Operations.html) and [Boto3](https://github.com/boto/boto3) Python library"
+version: 2.0.5
+connection_version: 2
+supported_versions: ["2024-10-31"]
+vendor: rapid7
+support: rapid7
+status: []
+sdk:
+  type: slim
+  version: 6.3.7
+  user: nobody
+key_features:
+  - "Lists and describes Security Hub-aggregated findings"
+  - "Get SQS messages"
+requirements:
+  - "AWS account"
+  - "AWS access key ID for authentication"
+  - "AWS secret key for signing requests with the given AWS access key ID"
+  - "AWS region to use for requests"
+troubleshooting:
+  - "If you encounter any issues configuring the plugin, check out the [plugin guide](https://insightconnect.help.rapid7.com/docs/aws-security-hub) for more details on how to configure this plugin."
+resources:
+  source_url: https://github.com/rapid7/insightconnect-plugins/tree/master/plugins/aws_securityhub
+  license_url: https://github.com/rapid7/insightconnect-plugins/blob/master/LICENSE
+  vendor_url: https://aws.amazon.com
+  docs_url: https://docs.rapid7.com/insightconnect/aws-security-hub/
+tags:
+- aws
+- securityhub
+- alerts
+hub_tags:
+  use_cases: [threat_detection_and_response, data_utility]
+  keywords: [aws, securityhub, alerts]
+  features: []
+links:
+  - "[AWS Security Hub](https://aws.amazon.com/security-hub/)"
+references:
+    - "[ AWS Security Hub](https://aws.amazon.com/security-hub/)"
+    - "[AWS Security Hub API](https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_Operations.html)"
+    - "[Boto3](https://github.com/boto/boto3)"
+    - "[InsightConnect Plugin Guide](https://docs.rapid7.com/insightconnect/aws-security-hub/)"
+version_history:
+  - "2.0.5 - Resolved Snyk vulnerabilities | SDK bump to latest version (6.3.7)"
+  - "2.0.4 - Bumping requirements.txt | SDK bump to 6.1.4"
+  - "2.0.3 - Update `docs_url` in plugin spec with a new link to [plugin setup guide](https://docs.rapid7.com/insightconnect/aws-security-hub/)"
+  - "2.0.2 - Add `docs_url` to plugin spec with link to [plugin setup guide](https://insightconnect.help.rapid7.com/docs/aws-security-hub)"
+  - "2.0.1 - Removed unused variables"
+  - "2.0.0 - New spec and help.md format for the Extension Library | Variable names updated as acronyms"
+  - "1.0.0 - Initial plugin"
+types:
+  Compliance:
+    Status:
+      title: Status
+      type: string
+      description: Status
+      required: false
+  Malware:
+    Name:
+      title: Name
+      type: string
+      description: Name
+      required: false
+    Path:
+      title: Path
+      type: string
+      description: Path
+      required: false
+    State:
+      title: State
+      type: string
+      description: State
+      required: false
+    Type:
+      title: Type
+      type: string
+      description: Type
+      required: false
+  Network:
+    DestinationDomain:
+      title: Destination Domain
+      type: string
+      description: Destination domain
+      required: false
+    DestinationIpV4:
+      title: Destination IPv4
+      type: string
+      description: Destination IPv4
+      required: false
+    DestinationIpV6:
+      title: Destination IPv6
+      type: string
+      description: Destination IPv6
+      required: false
+    DestinationPort:
+      title: Destination Port
+      type: integer
+      description: Destination port
+      required: false
+    Direction:
+      title: Direction
+      type: string
+      description: Direction
+      required: false
+    Protocol:
+      title: Protocol
+      type: string
+      description: Protocol
+      required: false
+    SourceDomain:
+      title: Source Domain
+      type: string
+      description: Source domain
+      required: false
+    SourceIpV4:
+      title: Source IPv4
+      type: string
+      description: Source IPv4
+      required: false
+    SourceIpV6:
+      title: Source IPv6
+      type: string
+      description: Source IPv6
+      required: false
+    SourceMac:
+      title: Source MAC
+      type: string
+      description: Source MAC
+      required: false
+    SourcePort:
+      title: Source Port
+      type: integer
+      description: Source port
+      required: false
+  Note:
+    Text:
+      title: Text
+      type: string
+      description: Text
+      required: false
+    UpdatedAt:
+      title: Updated At
+      type: string
+      description: Updated At
+      required: false
+    UpdatedBy:
+      title: Updated By
+      type: string
+      description: Updated by
+      required: false
+  Process:
+    LaunchedAt:
+      title: Launched At
+      type: string
+      description: Launched at
+      required: false
+    Name:
+      title: Name
+      type: string
+      description: Name
+      required: false
+    ParentPid:
+      title: Parent PID
+      type: integer
+      description: Parent PID
+      required: false
+    Path:
+      title: Path
+      type: string
+      description: Path
+      required: false
+    Pid:
+      title: PID
+      type: integer
+      description: PID
+      required: false
+    TerminatedAt:
+      title: Terminated At
+      type: string
+      description: Terminated at
+      required: false
+  ProductFields:
+    string:
+      title: String
+      type: string
+      description: String
+      required: false
+  RelatedFindings:
+    Id:
+      title: ID
+      type: string
+      description: ID
+      required: false
+    ProductArn:
+      title: Product ARN
+      type: string
+      description: Product ARN
+      required: false
+  Recommendation:
+    Text:
+      title: Text
+      type: string
+      description: Text
+      required: false
+    Url:
+      title: URL
+      type: string
+      description: URL
+      required: false
+  Remediation:
+    Recommendation:
+      title: Recommendation
+      type: Recommendation
+      description: Recommendation
+      required: false
+  AwsEc2Instance:
+    IamInstanceProfileArn:
+      title: IAM Instance Profile ARN
+      type: string
+      description: IAM instance profile ARN
+      required: false
+    ImageId:
+      title: Image ID
+      type: string
+      description: Image ID
+      required: false
+    IpV4Addresses:
+      title: IPv4 Addresses
+      type: "[]string"
+      description: IPv4 addresses
+      required: false
+    IpV6Addresses:
+      title: IPv6 Addresses
+      type: "[]string"
+      description: IPv6 addresses
+      required: false
+    KeyName:
+      title: Keyname
+      type: string
+      description: Keyname
+      required: false
+    LaunchedAt:
+      title: Launched At
+      type: string
+      description: Launched at
+      required: false
+    SubnetId:
+      title: Subnet ID
+      type: string
+      description: Subnet ID
+      required: false
+    Type:
+      title: Type
+      type: string
+      description: Type
+      required: false
+    VpcId:
+      title: VPC ID
+      type: string
+      description: VPC ID
+      required: false
+  AwsIamAccessKey:
+    CreatedAt:
+      title: Created At
+      type: string
+      description: Created at
+      required: false
+    Status:
+      title: Status
+      type: string
+      description: Status
+      required: false
+    UserName:
+      title: Username
+      type: string
+      description: Username
+      required: false
+  AwsS3Bucket:
+    OwnerId:
+      title: Owner ID
+      type: string
+      description: Owner ID
+      required: false
+    OwnerName:
+      title: Owner Name
+      type: string
+      description: Owner name
+      required: false
+  Container:
+    ImageId:
+      title: Image ID
+      type: string
+      description: Image ID
+      required: false
+    ImageName:
+      title: Image Name
+      type: string
+      description: Image name
+      required: false
+    LaunchedAt:
+      title: Launched At
+      type: string
+      description: Launched at
+      required: false
+    Name:
+      title: Name
+      type: string
+      description: Name
+      required: false
+  Details:
+    AwsEc2Instance:
+      title: AWS EC2 Instance
+      type: AwsEc2Instance
+      description: AWS EC2 instance
+      required: false
+    AwsIamAccessKey:
+      title: AWS IAM Access Key
+      type: AwsIamAccessKey
+      description: AWS IAM access key
+      required: false
+    AwsS3Bucket:
+      title: AWS S3 Bucket
+      type: AwsS3Bucket
+      description: AWS S3 bucket
+      required: false
+    Container:
+      title: Container
+      type: Container
+      description: Container
+      required: false
+    Other:
+      title: Other
+      type: ProductFields
+      description: Other
+      required: false
+  Resources:
+    Details:
+      title: Details
+      type: Details
+      description: Details
+      required: false
+    Id:
+      title: ID
+      type: string
+      description: ID
+      required: false
+    Partition:
+      title: Partition
+      type: string
+      description: Partition
+      required: false
+    Region:
+      title: Region
+      type: string
+      description: Region
+      required: false
+    Tags:
+      title: Tags
+      type: ProductFields
+      description: Tags
+      required: false
+    Type:
+      title: Type
+      type: string
+      description: Type
+      required: false
+  Severity:
+    Normalized:
+      title: Normalized
+      type: integer
+      description: Normalized
+      required: false
+    Product:
+      title: Product
+      type: integer
+      description: Product
+      required: false
+  ThreatIntelIndicators:
+    Category:
+      title: Category
+      type: string
+      description: Category
+      required: false
+    LastObservedAt:
+      title: Last Observed At
+      type: string
+      description: Last observed at
+      required: false
+    Source:
+      title: Source
+      type: string
+      description: Source
+      required: false
+    SourceUrl:
+      title: Source URL
+      type: string
+      description: Source URL
+      required: false
+    Type:
+      title: Type
+      type: string
+      description: Type
+      required: false
+    Value:
+      title: Value
+      type: string
+      description: Value
+      required: false
+  Findings:
+    AwsAccountId:
+      title: AWS account ID
+      type: string
+      description: AWS account ID
+      required: false
+    Compliance:
+      title: Compliance
+      type: Compliance
+      description: Compliance
+      required: false
+    Confidence:
+      title: Confidence
+      type: integer
+      description: Confidence
+      required: false
+    CreatedAt:
+      title: Created At
+      type: string
+      description: Created at
+      required: false
+    Criticality:
+      title: Criticality
+      type: integer
+      description: Criticality
+      required: false
+    Description:
+      title: Description
+      type: string
+      description: Description
+      required: false
+    FirstObservedAt:
+      title: First Observed At
+      type: string
+      description: First observed at
+      required: false
+    GeneratorId:
+      title: Generator ID
+      type: string
+      description: Generator ID
+      required: false
+    Id:
+      title: ID
+      type: string
+      description: ID
+      required: false
+    LastObservedAt:
+      title: Last Observed At
+      type: string
+      description: Last observed at
+      required: false
+    Malware:
+      title: Malware
+      type: "[]Malware"
+      description: Malware
+      required: false
+    Network:
+      title: Network
+      type: Network
+      description: Network
+      required: false
+    Note:
+      title: Note
+      type: Note
+      description: Note
+      required: false
+    Process:
+      title: Process
+      type: Process
+      description: Process
+      required: false
+    ProductArn:
+      title: Product ARN
+      type: string
+      description: Product ARN
+      required: false
+    ProductFields:
+      title: Product Fields
+      type: ProductFields
+      description: Product fields
+      required: false
+    RecordState:
+      title: Record State
+      type: string
+      description: Record state
+      required: false
+    RelatedFindings:
+      title: Related Findings
+      type: "[]RelatedFindings"
+      description: Related findings
+      required: false
+    Remediation:
+      title: Remediation
+      type: Remediation
+      description: Remediation
+      required: false
+    Resources:
+      title: Resources
+      type: "[]Resources"
+      description: Resources
+      required: false
+    SchemaVersion:
+      title: Schema Version
+      type: string
+      description: Schema version
+      required: false
+    Severity:
+      title: Severity
+      type: Severity
+      description: Severity
+      required: false
+    SourceUrl:
+      title: Source URL
+      type: string
+      description: Source URL
+      required: false
+    ThreatIntelIndicators:
+      title: Threat Intel Indicators
+      type: "[]ThreatIntelIndicators"
+      description: Threat intel indicators
+      required: false
+    Title:
+      title: Title
+      type: string
+      description: Title
+      required: false
+    Types:
+      title: Types
+      type: "[]string"
+      description: Types
+      required: false
+    UpdatedAt:
+      title: Updated At
+      type: string
+      description: Updated at
+      required: false
+    UserDefinedFields:
+      title: User-defined Fields
+      type: ProductFields
+      description: User-defined fields
+      required: false
+    VerificationState:
+      title: Verification State
+      type: string
+      description: Verification state
+      required: false
+    WorkflowState:
+      title: Workflow State
+      type: string
+      description: Workflow state
+      required: false
+      
+  Attributes:
+    SentTimestamp:
+      title: Sent Timestamp
+      type: string
+      description: Sent timestamp
+      required: false
+  Author:
+    DataType:
+      title: Data Type
+      type: string
+      description: Data type
+      required: false
+    StringValue:
+      title: String Value
+      type: string
+      description: String value
+      required: false
+  MessageAttributes:
+    Author:
+      title: Author
+      type: Author
+      description: Author
+      required: false
+    Title:
+      title: Title
+      type: Author
+      description: Title
+      required: false
+    WeeksOn:
+      title: Weeks On
+      type: Author
+      description: Weeks on
+      required: false
+  Message:
+    Attributes:
+      title: Attributes
+      type: Attributes
+      description: Attributes
+      required: false
+    Body:
+      title: Body
+      type: string
+      description: Body
+      required: false
+    MD5OfBody:
+      title: MD5 of Body
+      type: string
+      description: MD5 of body
+      required: false
+    MD5OfMessageAttributes:
+      title: MD5 of Message attributes
+      type: string
+      description: MD5 of message attributes
+      required: false
+    MessageAttributes:
+      title: Message Attributes
+      type: MessageAttributes
+      description: Message attributes
+      required: false
+    MessageId:
+      title: Message ID
+      type: string
+      description: Message ID
+      required: false
+    ReceiptHandle:
+      title: Receipt Handle
+      type: string
+      description: Receipt handle
+      required: false
+  HTTPHeaders:
+    content-length:
+      title: Content Length
+      type: string
+      description: Content length
+      required: false
+    content-type:
+      title: Content Type
+      type: string
+      description: Content type
+      required: false
+    date:
+      title: Date
+      type: string
+      description: Date
+      required: false
+    x-amzn-requestid:
+      title: Amazon Request ID
+      type: string
+      description: X-amzn-requestid
+      required: false
+  ResponseMetadata:
+    HTTPHeaders:
+      title: HTTP Headers
+      type: HTTPHeaders
+      description: HTTP headers
+      required: false
+    HTTPStatusCode:
+      title: HTTP Status Code
+      type: integer
+      description: HTTP status code
+      required: false
+    RequestId:
+      title: Request ID
+      type: string
+      description: Request ID
+      required: false
+    RetryAttempts:
+      title: Retry Attempts
+      type: integer
+      description: Retry attempts
+      required: false
+
+  SHCompliance:
+    Status:
+      title: "Status"
+      type: string
+      description: "Status"
+      required: false
+  SHProductFields:
+    aws/securityhub/SeverityLabel:
+      title: "Aws/Securityhub/Severitylabel"
+      type: string
+      description: "Aws/securityhub/severitylabel"
+      required: false
+    StandardsGuideSubscriptionArn:
+      title: "Standardsguidesubscriptionarn"
+      type: string
+      description: "Standardsguidesubscriptionarn"
+      required: false
+    aws/securityhub/ProductName:
+      title: "Aws/Securityhub/Productname"
+      type: string
+      description: "Aws/securityhub/productname"
+      required: false
+    RecommendationUrl:
+      title: "Recommendationurl"
+      type: string
+      description: "Recommendationurl"
+      required: false
+    RuleId:
+      title: "Ruleid"
+      type: string
+      description: "Ruleid"
+      required: false
+    RelatedAWSResources:0/name:
+      title: "Relatedawsresources:0/Name"
+      type: string
+      description: "Relatedawsresources:0/name"
+      required: false
+    RelatedAWSResources:0/type:
+      title: "Relatedawsresources:0/Type"
+      type: string
+      description: "Relatedawsresources:0/type"
+      required: false
+    aws/securityhub/FindingId:
+      title: "Aws/Securityhub/Findingid"
+      type: string
+      description: "Aws/securityhub/findingid"
+      required: false
+    RecordState:
+      title: "Recordstate"
+      type: string
+      description: "Recordstate"
+      required: false
+    StandardsGuideArn:
+      title: "Standardsguidearn"
+      type: string
+      description: "Standardsguidearn"
+      required: false
+    aws/securityhub/CompanyName:
+      title: "Aws/Securityhub/Companyname"
+      type: string
+      description: "Aws/securityhub/companyname"
+      required: false
+  SHRecommendation:
+    Url:
+      title: "URL"
+      type: string
+      description: "URL"
+      required: false
+    Text:
+      title: "Text"
+      type: string
+      description: "Text"
+      required: false
+  SHRemediation:
+    Recommendation:
+      title: "Recommendation"
+      type: SHRecommendation
+      description: "Recommendation"
+      required: false
+  SHResources:
+    Region:
+      title: "Region"
+      type: string
+      description: "Region"
+      required: false
+    Partition:
+      title: "Partition"
+      type: string
+      description: "Partition"
+      required: false
+    Type:
+      title: "Type"
+      type: string
+      description: "Type"
+      required: false
+    Id:
+      title: "Id"
+      type: string
+      description: "Id"
+      required: false
+  SHSeverity:
+    Product:
+      title: "Product"
+      type: integer
+      description: "Product"
+      required: false
+    Normalized:
+      title: "Normalized"
+      type: integer
+      description: "Normalized"
+      required: false
+  findings:
+    LastObservedAt:
+      title: "Lastobservedat"
+      type: string
+      description: "Lastobservedat"
+      required: false
+    FirstObservedAt:
+      title: "Firstobservedat"
+      type: string
+      description: "Firstobservedat"
+      required: false
+    GeneratorId:
+      title: "Generatorid"
+      type: string
+      description: "Generatorid"
+      required: false
+    Description:
+      title: "Description"
+      type: string
+      description: "Description"
+      required: false
+    Title:
+      title: "Title"
+      type: string
+      description: "Title"
+      required: false
+    UpdatedAt:
+      title: "Updatedat"
+      type: string
+      description: "Updatedat"
+      required: false
+    Compliance:
+      title: "Compliance"
+      type: SHCompliance
+      description: "Compliance"
+      required: false
+    ProductArn:
+      title: "Productarn"
+      type: string
+      description: "Productarn"
+      required: false
+    ProductFields:
+      title: "Productfields"
+      type: SHProductFields
+      description: "Productfields"
+      required: false
+    WorkflowState:
+      title: "Workflowstate"
+      type: string
+      description: "Workflowstate"
+      required: false
+    approximateArrivalTimestamp:
+      title: "Approximatearrivaltimestamp"
+      type: float
+      description: "Approximatearrivaltimestamp"
+      required: false
+    Resources:
+      title: "Resources"
+      type: "[]SHResources"
+      description: "Resources"
+      required: false
+    updatedAt:
+      title: "Updatedat"
+      type: string
+      description: "Updatedat"
+      required: false
+    Types:
+      title: "Types"
+      type: "[]string"
+      description: "Types"
+      required: false
+    Remediation:
+      title: "Remediation"
+      type: SHRemediation
+      description: "Remediation"
+      required: false
+    RecordState:
+      title: "Recordstate"
+      type: string
+      description: "Recordstate"
+      required: false
+    SchemaVersion:
+      title: "Schemaversion"
+      type: string
+      description: "Schemaversion"
+      required: false
+    Severity:
+      title: "Severity"
+      type: SHSeverity
+      description: "Severity"
+      required: false
+    Id:
+      title: "Id"
+      type: string
+      description: "Id"
+      required: false
+    CreatedAt:
+      title: "Createdat"
+      type: string
+      description: "Createdat"
+      required: false
+    AwsAccountId:
+      title: "Awsaccountid"
+      type: string
+      description: "Awsaccountid"
+      required: false
+  detail:
+    actionName:
+      title: "Actionname"
+      type: string
+      description: "Actionname"
+      required: false
+    actionDescription:
+      title: "Actiondescription"
+      type: string
+      description: "Actiondescription"
+      required: false
+    findings:
+      title: "Findings"
+      type: "[]findings"
+      description: "Findings"
+      required: false
+
+
+  securityHubPayload:
+    account:
+        title: "Account"
+        type: string
+        description: "Account"
+        required: false
+    region:
+        title: "Region"
+        type: string
+        description: "Region"
+        required: false
+    detail:
+        title: "Detail"
+        type: detail
+        description: "Detail"
+        required: false
+    detail-type:
+        title: "Detail-Type"
+        type: string
+        description: "Detail-type"
+        required: false
+    source:
+        title: "Source"
+        type: string
+        description: "Source"
+        required: false
+    version:
+        title: "Version"
+        type: string
+        description: "Version"
+        required: false
+    time:
+        title: "Time"
+        type: string
+        description: "Time"
+        required: false
+    id:
+        title: "Id"
+        type: string
+        description: "Id"
+        required: false
+    resources:
+        title: "Resources"
+        type: "[]string"
+        description: "Resources"
+        required: false
+
+connection:
+  aws_access_key_id:
+    title: AWS Access Key ID
+    description: The ID of the AWS Access Key to use for authentication with AWS
+    type: credential_secret_key
+    required: true
+    example: PSIETEWUYWWB776HFG
+  aws_secret_access_key:
+    title: AWS Secret Access Key
+    description: "The AWS Secret Access Key used for signing requests with the given
+      AWS Access Key ID"
+    type: credential_secret_key
+    required: true
+    example: WwwivfnwvwjsNN229933ksERE8
+  region:
+    description: AWS Region. This is not required
+    type: string
+    enum:
+    - us-east-2
+    - us-east-1
+    - us-west-1
+    - us-west-2
+    - ca-central-1
+    - ap-south-1
+    - ap-northeast-2
+    - ap-southeast-1
+    - ap-southeast-2
+    - ap-northeast-1
+    - eu-central-1
+    - eu-west-1
+    - eu-west-2
+    - sa-east-1
+    required: false
+    example: us-east-2
+
+actions:
+  get_findings:
+    title: Get Findings
+    description: Lists and describes Security Hub-aggregated findings that are specified by filter attributes
+    input:
+      filters:
+        title: Filters
+        description: An object of filters
+        type: object
+        required: false
+        example: {}
+    output:
+      Findings:
+        title: Findings
+        type: "[]Findings"
+        description: Security Hub-aggregated findings
+        required: false
+        example: [ { "SchemaVersion": "2018-10-08", "Id": "arn:aws:securityhub:us-east-2:000000000000:subscription/cis-aws-foundations-benchmark/v/1.2.0/1.2/finding/0000000-0000-0000-0000-0000000000000", "ProductArn": "arn:aws:securityhub:us-east-2::product/aws/securityhub", "GeneratorId": "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0/rule/1.2", "AwsAccountId": "000000000000", "Types": [ "Software and Configuration Checks/Industry and Regulatory Standards/CIS AWS Foundations Benchmark" ], "FirstObservedAt": "2019-05-14T05:20:43.691Z", "LastObservedAt": "2019-05-30T17:32:00.372Z", "CreatedAt": "2019-05-14T05:20:43.691Z", "UpdatedAt": "2019-05-30T17:32:00.372Z", "Severity": { "Product": 2, "Normalized": 20 }, "Title": "1.2 Ensure multi-factor authentication (MFA) is enabled for all IAM users that have a console password", "Description": "Multi-Factor Authentication (MFA) adds an extra layer of protection on top of a user name and password. It is recommended that MFA be enabled for all accounts that have a console password.", "Remediation": { "Recommendation": { "Text": "For directions on how to fix this issue, please consult the AWS Security Hub CIS documentation.", "Url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html#securityhub-standards-checks-1.2" } }, "ProductFields": { "StandardsGuideArn": "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0", "StandardsGuideSubscriptionArn": "arn:aws:securityhub:us-east-2:000000000000:subscription/cis-aws-foundations-benchmark/v/1.2.0", "RuleId": "1.2", "RecommendationUrl": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards.html#securityhub-standards-checks-1.2", "RelatedAWSResources:0/name": "securityhub-mfa-enabled-for-iam-console-access-000000", "RelatedAWSResources:0/type": "AWS::Config::ConfigRule", "RecordState": "ACTIVE", "aws/securityhub/FindingId": "arn:aws:securityhub:us-east-2::product/aws/securityhub/arn:aws:securityhub:us-east-2:000000000000:subscription/cis-aws-foundations-benchmark/v/1.2.0/1.2/finding/0000000-0000-0000-0000-000000000", "aws/securityhub/SeverityLabel": "LOW", "aws/securityhub/ProductName": "Security Hub", "aws/securityhub/CompanyName": "AWS" }, "Resources": [ { "Type": "AwsAccount", "Id": "AWS::::Account:0000000000", "Partition": "aws", "Region": "us-east-2" } ], "Compliance": { "Status": "FAILED" }, "WorkflowState": "NEW", "RecordState": "ACTIVE" } ]
+triggers:
+  sqs_feed:
+    title: Get SQS Message
+    description: Poll from an SQS Queue
+    input:
+      queue_url:
+        title: Queue URL
+        description: URL for the SQS queue
+        type: string
+        required: true
+        example: https://sqs.us-east-1.amazonaws.com/177715257436/MyQueue
+      AttributeNames:
+        title: Attribute Names
+        description: A list of attributes that need to be returned along with each message ['All', 'Policy', 'VisibilityTimeout', 'MaximumMessageSize', 'MessageRetentionPeriod', 'ApproximateNumberOfMessages', 'ApproximateNumberOfMessagesNotVisible', 'CreatedTimestamp', 'LastModifiedTimestamp', 'QueueArn', 'ApproximateNumberOfMessagesDelayed', 'DelaySeconds', 'ReceiveMessageWaitTimeSeconds', 'RedrivePolicy', 'FifoQueue', 'ContentBasedDeduplication', 'KmsMasterKeyId', 'KmsDataKeyReusePeriodSeconds']
+        type: "[]string"
+        required: false
+        default: ["All"]
+        example: All
+      MaxNumberOfMessages:
+        title: Max Number of Messages
+        description: The maximum number of messages to return. Amazon SQS never returns more messages than this value. Valid values 1 to 10. Default 1
+        type: integer
+        required: false
+        default: 1
+        example: 1
+      MessageAttributeNames:
+        title: Message Attribute Names
+        description: The name of the message attribute
+        type: "[]string"
+        required: false
+        default: ["All"]
+        example: All
+      VisibilityTimeout:
+        title: Visibility Timeout
+        description: The duration (in seconds) that the received messages are hidden from subsequent retrieve requests after being retrieved by a ReceiveMessage request
+        type: integer
+        required: false
+        default: 0
+        example: 0
+      WaitTimeSeconds:
+        title: Wait Time Seconds
+        description: The duration (in seconds) for which the call waits for a message to arrive in the queue before returning. If a message is available, the call returns sooner than WaitTimeSeconds
+        type: integer
+        required: false
+        default: 0
+        example: 0
+      ReceiveRequestAttemptId:
+        title: Receive Request Attempt ID
+        description: This parameter applies only to FIFO (first-in-first-out) queues
+        type: string
+        required: false
+        default: ""
+        example: b57d1e3f-0a3f-4b67-9bb9-3a6d5f9b4f8c
+      interval:
+        title: Interval
+        description: How many seconds to wait until next poll
+        type: integer
+        required: true
+        default: 5
+        example: 5
+    output:
+      Message:
+        title: Message
+        type: Message
+        description: Security Hub message
+        required: false
+        example: { "MessageId": "3bd3134a-379f-4bbc-953b-ea631537bd75", "ReceiptHandle": "AQEBRCB5IzduYADYYhtUnV8sJ08nqTGSi1P6KiFoIhXRDIWZC6rjZGM/f5+Mvh0AnO2xJsc5559dQupnHZLJTPcnjFygYN5vbgOVx9G2cfcO4iFE9c53/31jPd8+KpsJRL9DVjRb4cRX6d84G+kstBXmZuDc684zS2I93jsjWFkvId26ReHzbQ6+iRMM7m0h2W5er+KymAkLhhdPCrWYbMreoI35HALUYbSFZV8vd+srwKNPJ59l+DMme3nHAzFGKvQoyJqSWp6uk2ywIvbHISzYWqKk7cBsnnROsIhiF9umsWgBM+T/lm5HHeRIfsa6T4vzEyI4FepeZmrk2Tz8g7z4k+GHJr1wF8AxOxQR+VUfa2ycM3wvpUgKsaAtekDRhO3LJQVuyp/Ll6m9vzf+QAIcKg==", "MD5OfBody": "bbdc5fdb8be7251f5c910905db994bab", "Body": "Information about current NY Times fiction bestseller for week of 12/11/2016.", "Attributes": { "SenderId": "AIDAZTUUAVRPYOR5E7A5W", "ApproximateFirstReceiveTimestamp": "1559246912467", "ApproximateReceiveCount": "1", "SentTimestamp": "1559246899951" }, "MD5OfMessageAttributes": "d25a6aea97eb8f585bfa92d314504a92", "MessageAttributes": { "Author": { "StringValue": "John Grisham", "DataType": "String" }, "Title": { "StringValue": "The Whistler", "DataType": "String" }, "WeeksOn": { "StringValue": "6", "DataType": "Number" } } }
+      securityhubevent:
+        title: Security Hub Event
+        type: securityHubPayload
+        description: Security Hub event payload
+        required: false
+        example: {
+  "securityhubevent": { "version": "0", "id": "abcd1234-5678-90ef-abcd-1234567890ef", "detail-type": "Security Hub Findings - Imported", "source": "aws.securityhub", "account": "123456789012", "time": "2025-07-04T12:34:56Z", "region": "us-east-1", "resources": [ "arn:aws:securityhub:us-east-1::product/aws/securityhub" ], "detail": { "findings": [ { "SchemaVersion": "2018-10-08", "Id": "arn:aws:securityhub:us-east-1:123456789012:finding/abc12345", "ProductArn": "arn:aws:securityhub:us-east-1::product/aws/securityhub", "AwsAccountId": "123456789012", "Types": [ "Software and Configuration Checks/AWS Security Best Practices" ], "FirstObservedAt": "2025-07-04T12:00:00Z", "LastObservedAt": "2025-07-04T12:34:00Z", "CreatedAt": "2025-07-04T12:34:56Z", "UpdatedAt": "2025-07-04T12:35:00Z", "Severity": { "Product": 8, "Normalized": 80, "Label": "HIGH" }, "Title": "IAM user has active access keys not rotated for 90 days", "Description": "The IAM user 'jane.doe' has access keys that have not been rotated in 90 days.", "Remediation": { "Recommendation": { "Text": "Rotate the access keys for the IAM user regularly.", "Url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html" } }, "ProductFields": { "aws/securityhub/FindingId": "abc12345", "aws/securityhub/CompanyName": "AWS", "aws/securityhub/ProductName": "Security Hub", "aws/securityhub/SeverityLabel": "HIGH" }, "Resources": [ { "Type": "AwsIamUser", "Id": "arn:aws:iam::123456789012:user/jane.doe", "Partition": "aws", "Region": "us-east-1" } ], "Compliance": { "Status": "FAILED" }, "WorkflowState": "NEW", "RecordState": "ACTIVE" } ] } } }
+
+      ResponseMetadata:
+        title: Response Metadata
+        type: ResponseMetadata
+        description: Security Hub response metadata
+        required: false
+        example: { "RequestId": "c52dccd3-9d9c-5f34-9e74-99b9a71cc3e9", "HTTPStatusCode": 200, "HTTPHeaders": { "x-amzn-requestid": "c52dccd3-9d9c-5f34-9e74-99b9a71cc3e9", "date": "Thu, 30 May 2019 20:08:32 GMT", "content-type": "text/xml", "content-length": "1737" }, "RetryAttempts": 0 }

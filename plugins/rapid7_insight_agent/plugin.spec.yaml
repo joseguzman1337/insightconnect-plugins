@@ -1,0 +1,458 @@
+plugin_spec_version: v2
+extension: plugin
+products: [insightconnect]
+name: rapid7_insight_agent
+title: Rapid7 Insight Agent
+description: Using the Insight Agent plugin from InsightConnect, you can quarantine,
+  unquarantine and monitor potentially malicious IPs, addresses, hostnames, and devices
+  across your organization
+version: 3.0.8
+connection_version: 2
+supported_versions: [Rapid7 Insight Agent 2024-08-23]
+vendor: rapid7
+support: rapid7
+status: []
+cloud_ready: true
+fedramp_ready: true
+sdk:
+  type: slim
+  version: 6.4.3
+  user: nobody
+key_features:
+- The agent is used by [Rapid7 InsightIDR](https://www.rapid7.com/products/insightidr/)
+  and [InsightVM](https://www.rapid7.com/products/insightvm/) customers to monitor
+  endpoints.
+requirements:
+- '[Platform API Key](https://docs.rapid7.com/insight/managing-platform-api-keys/)'
+- Administrator access to InsightIDR
+troubleshooting:
+- If the actions `Get Agent Details` and `Get All Agents by IP` return a `next cursor`
+  value, it is an indication that more pages of data are available to be reviewed.
+  In this instance, it is recommended to run the action multiple times and pass the
+  `next cursor` value, recording all agents found.
+links:
+- '[Rapid7 Insight Agent](https://docs.rapid7.com/insight-agent/overview/)'
+references:
+- '[Manage Platform API Keys](https://docs.rapid7.com/insight/managing-platform-api-keys/)'
+version_history:
+- 3.0.8 - Updated SDK to the latest version (6.4.3)
+- 3.0.7 - Added response checks to actions to improve error handling | Updated SDK
+  to latest version (6.4.1)
+- 3.0.6 - Remove use of session from the connection object to prevent session timeouts
+- 3.0.5 - Updated SDK to the latest version (6.3.10)
+- 3.0.4 - Updated SDK to the latest version (6.3.3)
+- 3.0.3 - Updated SDK to the latest version (6.2.5)
+- '3.0.2 - Updated to use latest buildpack to address vulnerabilities | Update `Get
+  Agent Details`:  extended output to include `agent` field when no assets are found'
+- 3.0.1 - Update 'Get Agent Details' to allow no assets to be returned | SDK bump
+  to latest version
+- 3.0.0 - Update `Get Agent Details` and `Get All Agents by IP` to return the next
+  page token if more pages are available to search | Update `Get Agent Details` to
+  return agent location details | Initial updates for fedramp compliance | Updated
+  SDK to the latest version
+- 2.1.2 - Improve logging | Update SDK
+- "2.1.1 - `Get All Agents by IP Address`: Fixed issue where action failed when agent\
+  \ did not have a primary address, and extended output to include agent location\
+  \ details | `Get Agent Details`: Extended output to include agent's public IP address\
+  \ and location"
+- 2.1.0 - Updated SDK to the latest version | New action added `Get All Agents by
+  IP Address`
+- 2.0.1 - Update `Connection Test` to identify if `Region` is incorrect  | Update
+  Plugin runtime to version 5
+- 2.0.0 - Update action `Quarantine Multiple` outputs to Completed and Failed, removed
+  All Operations Successful, replaced output Agent IDs with Hostname
+- '1.2.0 - New action: `Quarantine Multiple`'
+- '1.1.1 - Quarantine: Fix incorrect behavior for unquarantine when the agent ID is
+  wrong'
+- 1.1.0 - Cloud enabled
+- 1.0.4 - Add new supported regions for API | Create unit tests for actions Check
+  Agent Status, Quarantine, Get Agent Details
+- 1.0.3 - Documentation update
+- 1.0.2 - Fix for a case-sensitive agent hostname
+- 1.0.1 - Documentation update
+- 1.0.0 - Initial plugin
+resources:
+  source_url: https://github.com/rapid7/insightconnect-plugins/tree/master/plugins/rapid7_insight_agent
+  license_url: https://github.com/rapid7/insightconnect-plugins/blob/master/LICENSE
+  vendor_url: https://www.rapid7.com
+  docs_url: https://docs.rapid7.com/insightconnect/insight-agent
+tags:
+- rapid7
+- agent
+- insight
+- edr
+- endpoint
+- detection
+- response
+- idr
+- ivm
+hub_tags:
+  use_cases: [threat_detection_and_response]
+  keywords: [rapid7, endpoint, incident_response, detection, insightidr, cloud_enabled]
+  features: []
+types:
+  attribute:
+    key:
+      title: Key
+      type: string
+      description: Key
+      required: false
+    value:
+      title: Value
+      type: string
+      description: Value
+      required: false
+  quarantineState_object:
+    currentState:
+      title: Current State
+      type: string
+      description: Current state
+      required: false
+  agent_info:
+    agentSemanticVersion:
+      title: Agent Semantic Version
+      type: string
+      description: Agent semantic version
+      required: false
+    agentStatus:
+      title: Agent Status
+      type: string
+      description: Agent status
+      required: false
+    quarantineState:
+      title: Quarantine State
+      type: quarantineState_object
+      description: Quarantine state
+      required: false
+  hostName:
+    name:
+      title: Name
+      type: string
+      description: Name
+      required: false
+  primaryAddress:
+    ip:
+      title: IP Address
+      type: string
+      description: IP address
+      required: false
+    mac:
+      title: MAC Address
+      type: string
+      description: MAC address
+      required: false
+  uniqueIdentity_object:
+    id:
+      title: ID
+      type: string
+      description: ID
+      required: false
+    source:
+      title: Source
+      type: string
+      description: Source
+      required: false
+  host:
+    attributes:
+      title: Attributes
+      type: '[]attribute'
+      description: Attributes
+      required: false
+    description:
+      title: Description
+      type: string
+      description: Description
+      required: false
+    hostNames:
+      title: Hostnames
+      type: '[]hostName'
+      description: Hostnames
+      required: false
+    primaryAddress:
+      title: Primary Address
+      type: primaryAddress
+      description: Primary address
+      required: false
+    uniqueIdentity:
+      title: Unique Identity
+      type: '[]uniqueIdentity_object'
+      description: Unique identity
+      required: false
+    vendor:
+      title: Vendor
+      type: string
+      description: Vendor
+      required: false
+    version:
+      title: Version
+      type: string
+      description: Version
+      required: false
+  location:
+    city:
+      title: City
+      description: The name of the city where the agent is located
+      type: string
+      required: false
+    region:
+      title: Region
+      description: The name of the region where the agent is located
+      type: string
+      required: false
+    countryName:
+      title: Country Name
+      description: The name of the country where the agent is located
+      type: string
+      required: false
+    countryCode:
+      title: Country Code
+      description: The code of the country where the agent is located
+      type: string
+      required: false
+    continent:
+      title: Continent
+      description: The name of the continent where the agent is located
+      type: string
+      required: false
+  agent:
+    agent_info:
+      title: Agent Information
+      type: agent_info
+      description: Agent information
+      required: false
+    host:
+      title: Host
+      type: host
+      description: Host
+      required: false
+    publicIpAddress:
+      title: Public IP Address
+      description: The agent's public IP address
+      type: string
+      required: false
+    location:
+      title: Location
+      description: The agent's location details
+      type: location
+      required: false
+    id:
+      title: ID
+      type: string
+      description: ID
+      required: false
+    platform:
+      title: Platform
+      type: string
+      description: Platform
+      required: false
+  quarantine_multiple_error:
+    hostname:
+      title: Hostname
+      type: string
+      description: Hostname
+      required: false
+    error:
+      title: Error
+      type: string
+      description: Error
+      required: false
+connection:
+  api_key:
+    title: API Key
+    description: User or Organization Key from the Insight Platform
+    type: credential_secret_key
+    example: a5zy0a6g-504e-46bz-84xx-1b3f5ci36l99
+    required: true
+  region:
+    title: Region
+    description: Region
+    type: string
+    default: United States
+    example: United States
+    required: true
+    enum:
+    - United States
+    - United States 2
+    - United States 3
+    - Europe
+    - Canada
+    - Australia
+    - Japan
+actions:
+  quarantine_multiple:
+    title: Quarantine Multiple
+    description: Quarantine or unquarantine multiple hosts
+    input:
+      agent_array:
+        title: Agent Array
+        description: Agent hostnames to quarantine or unquarantine
+        type: '[]string'
+        required: true
+        example: [abcdef123, abcdef123]
+      interval:
+        title: Interval
+        description: Length of time in seconds to try to take action on a device.
+          This is also called Advertisement Period
+        type: int
+        default: 604800
+        example: 604800
+        required: true
+      quarantine_state:
+        title: Quarantine State
+        description: Set to true to quarantine a host, set to false to unquarantine
+        type: boolean
+        default: true
+        example: true
+        required: true
+    output:
+      failed:
+        title: Failed
+        description: List of unsuccessfully quarantined hosts
+        type: '[]quarantine_multiple_error'
+        example: [{hostname: abcdef123, error: Hostname could not be found}]
+        required: false
+      completed:
+        title: Completed
+        description: List of successfully quarantined hosts
+        type: '[]string'
+        example: [abcdef123]
+        required: false
+  get_agent_details:
+    title: Get Agent Details
+    description: Find and display detailed information about a device. If additional
+      pages of agents are available, the action should be run again with the returned
+      next cursor
+    input:
+      agent:
+        title: Agent
+        description: IP address, MAC address, or hostname of the device to get information
+          from
+        type: string
+        required: true
+        example: Example-Hostname
+      next_cursor:
+        title: Next Cursor
+        description: The next page cursor to continue an existing query and search
+          additional pages of agents
+        type: string
+        required: false
+        example: 9de5069c5afe602b2ea0a04b66beb2c0
+    output:
+      agent:
+        title: Agent
+        description: Agent information
+        type: agent
+        example: '{"id":"ExampleID","platform":"windows","publicIpAddress":"192.168.0.1","host":{"vendor":"Microsoft","version":"10","description":"ExampleDescription","hostNames":[{"name":"ExampleHostname"}],"primaryAddress":{"ip":"12.43.13.43","mac":""},"uniqueIdentity":[],"attributes":[]},"agent_info":{"agentSemanticVersion":"ExampleVersion","agentStatus":"STALE","quarantineState":{"currentState":"QUARANTINED"}}}'
+        required: false
+      next_cursor:
+        title: Next Cursor
+        description: The next page cursor, if available, to continue the query and
+          search additional pages of agents
+        type: string
+        required: false
+        example: 9de5069c5afe602b2ea0a04b66beb2c0
+  get_all_agents_by_ip:
+    title: Get All Agents by IP Address
+    description: This action is used to find all agents that share the same public
+      or private IP address and display details about them. If additional pages of
+      agents are available, the action should be run again with the returned next
+      cursor
+    input:
+      ip_address:
+        title: IP Address
+        description: The public or private IP address for all the agents to be searched
+          for
+        type: string
+        required: true
+        example: 192.168.0.1
+      next_cursor:
+        title: Next Cursor
+        description: The next page cursor to continue an existing query and search
+          additional pages of agents
+        type: string
+        required: false
+        example: 9de5069c5afe602b2ea0a04b66beb2c0
+    output:
+      agents:
+        title: Agents
+        description: The list of all found agents
+        type: '[]agent'
+        example: '[[{"id":"ExampleID1","platform":"linux","publicIpAddress":"192.168.0.2","host":{"vendor":"Ubuntu","version":"20.04","description":"ExampleDescription1","hostNames":[{"name":"ExampleHostname1"}],"primaryAddress":{"ip":"10.20.30.40","mac":"00:11:22:33:44:55"},"uniqueIdentity":["1234567890"],"attributes":["attribute1","attribute2"]},"agent_info":{"agentSemanticVersion":"ExampleVersion1","agentStatus":"ACTIVE","quarantineState":{"currentState":"QUARANTINED"}}},{"id":"ExampleID2","platform":"mac","publicIpAddress":"192.168.0.3","host":{"vendor":"Apple","version":"11","description":"ExampleDescription2","hostNames":[{"name":"ExampleHostname2"}],"primaryAddress":{"ip":"50.60.70.80","mac":"AA:BB:CC:DD:EE:FF"},"uniqueIdentity":["0987654321"],"attributes":["attribute3","attribute4"]},"agent_info":{"agentSemanticVersion":"ExampleVersion2","agentStatus":"INACTIVE","quarantineState":{"currentState":"QUARANTINED"}}},{"id":"ExampleID3","platform":"windows","publicIpAddress":"192.168.0.4","host":{"vendor":"Microsoft","version":"11","description":"ExampleDescription3","hostNames":[{"name":"ExampleHostname3"}],"primaryAddress":{"ip":"90.80.70.60","mac":"11:22:33:44:55:66"},"uniqueIdentity":["2468135790"],"attributes":["attribute5","attribute6"]},"agent_info":{"agentSemanticVersion":"ExampleVersion3","agentStatus":"STALE","quarantineState":{"currentState":"QUARANTINED"}}}]]'
+        required: false
+      next_cursor:
+        title: Next Cursor
+        description: The next page cursor, if available, to continue the query and
+          search additional pages of agents
+        type: string
+        required: false
+        example: 9de5069c5afe602b2ea0a04b66beb2c0
+  quarantine:
+    title: Quarantine
+    description: Quarantine or unquarantine on a device
+    input:
+      agent_id:
+        title: Agent ID
+        description: The ID of the agent on the device to quarantine
+        type: string
+        example: a1cfb273c8e7d46a9e2a0e2dae01a0ce
+        required: true
+        order: 1
+      quarantine_state:
+        title: Quarantine State
+        description: Set to true to quarantine a host, set to false to unquarantine
+        type: boolean
+        default: true
+        example: true
+        required: true
+        order: 2
+      interval:
+        title: Interval
+        description: Length of time in seconds to try to take action on a device.
+          This is also called Advertisement Period
+        type: int
+        default: 604800
+        example: 604800
+        required: true
+    output:
+      success:
+        title: Success
+        description: Was operation successful
+        type: boolean
+        example: true
+        required: true
+  check_agent_status:
+    title: Check Agent Status
+    description: Get the online status and quarantine state of an agent
+    input:
+      agent_id:
+        title: Agent ID
+        description: The ID of the agent on the device to get the status from
+        type: string
+        example: a1cfb273c8e7d46a9e2a0e2dae01a0ce
+        required: true
+    output:
+      is_currently_quarantined:
+        title: Is Currently Quarantined
+        description: Is the device currently quarantined
+        type: boolean
+        example: true
+        required: true
+      is_quarantine_requested:
+        title: Is Quarantine Requested
+        description: Is a quarantine action pending on this device
+        type: boolean
+        example: true
+        required: true
+      is_unquarantine_requested:
+        title: Is Unquarantine Requested
+        description: Is there a pending request to release quarantine on this device
+        type: boolean
+        example: true
+        required: true
+      is_asset_online:
+        title: Is Asset Online
+        description: Indicates that the agent is connected to the Insight platform.
+          This means the device is powered on and is connected to Rapid7
+        type: boolean
+        example: true
+        required: true

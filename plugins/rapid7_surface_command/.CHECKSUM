@@ -1,0 +1,19 @@
+{
+	"spec": "1d599eb29690ed0b7c651b12dc5356c3",
+	"manifest": "8471299afd7e7377d87ff503e45babef",
+	"setup": "2a0d53a8a2ae8b8683cec06dc9bdc761",
+	"schemas": [
+		{
+			"identifier": "run_adhoc_query/schema.py",
+			"hash": "2e774e4dd9a30390b34a2612056bbca4"
+		},
+		{
+			"identifier": "run_query/schema.py",
+			"hash": "9643c1c8719fa371dec05b0cd0ef75c7"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "b9f6e2e9f113d4f91ebf027d03978ca4"
+		}
+	]
+}

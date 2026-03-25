@@ -1,0 +1,35 @@
+{
+	"spec": "82ca94bdef396a13ad6f7bd2906d6c94",
+	"manifest": "0b2490848001bba1d2e3304d5dcccdab",
+	"setup": "c2fad45b2ef6292be0a797d2449d3613",
+	"schemas": [
+		{
+			"identifier": "get_case_details/schema.py",
+			"hash": "c2f1c1377dcddea89616a1fd22d3c583"
+		},
+		{
+			"identifier": "get_cases/schema.py",
+			"hash": "6e35e9078585e685fa895042bd37364e"
+		},
+		{
+			"identifier": "get_threat_details/schema.py",
+			"hash": "2d1bc8bd6caf9570cc00d5375a9251d2"
+		},
+		{
+			"identifier": "get_threats/schema.py",
+			"hash": "637b4443562762878bb91af45d6434aa"
+		},
+		{
+			"identifier": "manage_case/schema.py",
+			"hash": "46e078947a81bc94a3dde8f166eb89bb"
+		},
+		{
+			"identifier": "manage_threat/schema.py",
+			"hash": "0387e9c547ee4b0948ec17f04498654a"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "5b54b21d29ab6ee8fda8c8d068fb4562"
+		}
+	]
+}

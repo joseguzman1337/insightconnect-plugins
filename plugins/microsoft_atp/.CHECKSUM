@@ -1,0 +1,87 @@
+{
+	"spec": "abb373bff55f36d56faa2783e5bace83",
+	"manifest": "4646e93b94aa47ca9b0a184e27fdb523",
+	"setup": "75bd378b5ab832d1a1880e5267a03b24",
+	"schemas": [
+		{
+			"identifier": "blacklist/schema.py",
+			"hash": "63664fe04fe705b80fc40b9e376acaa8"
+		},
+		{
+			"identifier": "collect_investigation_package/schema.py",
+			"hash": "81cffa7d72ba48b68bef6da01fda57cf"
+		},
+		{
+			"identifier": "find_machines_with_installed_software/schema.py",
+			"hash": "5044d8b29da4817618b3eb869c8bed9a"
+		},
+		{
+			"identifier": "get_file_id_from_alert_id/schema.py",
+			"hash": "e8d5350eb1f91e51049d9dd86065cae9"
+		},
+		{
+			"identifier": "get_installed_software/schema.py",
+			"hash": "d19d648e2e6b20c6dd143df01f941c89"
+		},
+		{
+			"identifier": "get_machine_action/schema.py",
+			"hash": "46bbc1fbdf1c4f915870cd3138fc127b"
+		},
+		{
+			"identifier": "get_machine_information/schema.py",
+			"hash": "c4feb3a5cdfba0f9a5b900e5edc50746"
+		},
+		{
+			"identifier": "get_machine_vulnerabilities/schema.py",
+			"hash": "76d744f587d8d0dffa3482d8fdfb8194"
+		},
+		{
+			"identifier": "get_missing_software_updates/schema.py",
+			"hash": "65f5a47a1cc552f6eacfe383a6f145fc"
+		},
+		{
+			"identifier": "get_related_machines/schema.py",
+			"hash": "c61fb9fe4fb2a6806f55206491b8b201"
+		},
+		{
+			"identifier": "get_security_recommendations/schema.py",
+			"hash": "3a222c20069ac15af381c44657313191"
+		},
+		{
+			"identifier": "isolate_machine/schema.py",
+			"hash": "ec4e52fab548dd06b02a4d99b8ee121c"
+		},
+		{
+			"identifier": "manage_tags/schema.py",
+			"hash": "c031929b26f4ae81e9bc75871e380da6"
+		},
+		{
+			"identifier": "run_antivirus_scan/schema.py",
+			"hash": "7be3baf2c9871e3f27a41b24233afc71"
+		},
+		{
+			"identifier": "stop_and_quarantine_file/schema.py",
+			"hash": "6f2ea415df60792f71082434e250f9ea"
+		},
+		{
+			"identifier": "unisolate_machine/schema.py",
+			"hash": "1d576dc1e0f2ff913f2d0f8651057f59"
+		},
+		{
+			"identifier": "update_alert/schema.py",
+			"hash": "d5d06eb5a191b15cae0105650caac5de"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "2af382d00e6afd4fefbf92c8f2718fc5"
+		},
+		{
+			"identifier": "get_alert_matching_key/schema.py",
+			"hash": "60978d8495975054994fa5f342703f3f"
+		},
+		{
+			"identifier": "get_alerts/schema.py",
+			"hash": "5413830eac4daf77eff3f89e6e33060e"
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"spec": "7214c9d5d14c97bee992339af09775aa",
+	"manifest": "4ff9e453021c2d0799d46fc3d52c9ee3",
+	"setup": "6ddc5ad659b3156169eac46ddd45ae99",
+	"schemas": [
+		{
+			"identifier": "add_fixed_address/schema.py",
+			"hash": "64216a80dad928e3669900aa7030b1aa"
+		},
+		{
+			"identifier": "add_host/schema.py",
+			"hash": "84763ef895a4b524a17d21a7b2d751eb"
+		},
+		{
+			"identifier": "delete_host/schema.py",
+			"hash": "978ae5e52b5b2789a4e053fb1adfcd1c"
+		},
+		{
+			"identifier": "get_host/schema.py",
+			"hash": "4ed19be4cfc7c2b75b94a5be8793bee1"
+		},
+		{
+			"identifier": "modify_host/schema.py",
+			"hash": "73b4b79677bc22ff465430bad68e4b65"
+		},
+		{
+			"identifier": "search_by_ip/schema.py",
+			"hash": "0fa92d9a727530356817a2bdb6fafd07"
+		},
+		{
+			"identifier": "search_by_mac/schema.py",
+			"hash": "33f2e8b53268c432063e45cf2d71fbca"
+		},
+		{
+			"identifier": "search_by_name/schema.py",
+			"hash": "049efeed293c75f0c8c4a63200eeca80"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "a52bb0a944a248d7c46f01360f7b0753"
+		}
+	]
+}

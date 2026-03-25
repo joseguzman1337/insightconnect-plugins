@@ -1,0 +1,87 @@
+{
+	"spec": "32ef44c2c41dcb546e926e0e1f4bdf1e",
+	"manifest": "80f0027be6ce1c490b7b010a58c20057",
+	"setup": "15dd5145e9607af62e47525d0890c350",
+	"schemas": [
+		{
+			"identifier": "add_user_to_group/schema.py",
+			"hash": "00c847e403f5e7e24440c998f040438c"
+		},
+		{
+			"identifier": "add_user_to_groups_by_id/schema.py",
+			"hash": "4eb75ae6c2fe6ba7d5cc1fa979d484da"
+		},
+		{
+			"identifier": "change_user_password/schema.py",
+			"hash": "4a6736fe83982ff3268244bdf0499fdf"
+		},
+		{
+			"identifier": "create_user/schema.py",
+			"hash": "26e81f90eeeaeb8b5d9f942d3e8e4621"
+		},
+		{
+			"identifier": "delete_device/schema.py",
+			"hash": "a4343170f5493eddd03484f99d478ba1"
+		},
+		{
+			"identifier": "disable_device/schema.py",
+			"hash": "5e7ddda335b4bda674cc1be796bdc9ef"
+		},
+		{
+			"identifier": "disable_user_account/schema.py",
+			"hash": "ac60aaefbcf79a8f741a208a0af2977e"
+		},
+		{
+			"identifier": "enable_device/schema.py",
+			"hash": "08dd6e10b528b7d5281fa4600ed9807a"
+		},
+		{
+			"identifier": "enable_user_account/schema.py",
+			"hash": "56a2ba0c1c5442839e4a7c9ee2a5240a"
+		},
+		{
+			"identifier": "force_user_to_change_password/schema.py",
+			"hash": "d404392e810a9a564b9aaf34ef6cc6c4"
+		},
+		{
+			"identifier": "get_device/schema.py",
+			"hash": "f81340c524a486435dd3c15f518a0c52"
+		},
+		{
+			"identifier": "get_group_by_name/schema.py",
+			"hash": "5128836987810a69be9baf13a1677d0a"
+		},
+		{
+			"identifier": "get_user_info/schema.py",
+			"hash": "86e2032bae88d822d571d19054485693"
+		},
+		{
+			"identifier": "list_group_members/schema.py",
+			"hash": "3546eeb0139e0d6d30ae623c580046e3"
+		},
+		{
+			"identifier": "remove_user_from_group/schema.py",
+			"hash": "a3e07cb651837803df2445152ce57609"
+		},
+		{
+			"identifier": "revoke_sign_in_sessions/schema.py",
+			"hash": "d6258806a4dd88732ee157bbff4e09ab"
+		},
+		{
+			"identifier": "search_device/schema.py",
+			"hash": "2af07d633bd311ac5b8ee629956ad4b2"
+		},
+		{
+			"identifier": "update_user_info/schema.py",
+			"hash": "e6a527b2eddb4aae93f286d9c16c436c"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "21a9bd75fccf486ac9226d3a254bba67"
+		},
+		{
+			"identifier": "risk_detection/schema.py",
+			"hash": "858a032b1c7f95ab6c908324f113c39f"
+		}
+	]
+}

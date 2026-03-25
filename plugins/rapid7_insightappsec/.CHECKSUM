@@ -1,0 +1,87 @@
+{
+	"spec": "9d716f7c38e8c1d148b2e17e71e2322f",
+	"manifest": "d534b847608335cb2ef9b599375b98d5",
+	"setup": "7e1af6f4c9bbb5743029888997acf03f",
+	"schemas": [
+		{
+			"identifier": "create_scan_config/schema.py",
+			"hash": "823b651e8b669ed833eeaf2614bdcf0e"
+		},
+		{
+			"identifier": "create_schedule/schema.py",
+			"hash": "e3f82ca1aac786acd410433f7f9e719e"
+		},
+		{
+			"identifier": "delete_scan/schema.py",
+			"hash": "446a5bcbebc929cdb83e31452ae32533"
+		},
+		{
+			"identifier": "delete_scan_config/schema.py",
+			"hash": "8f62daab284362a4108c5b010a599c04"
+		},
+		{
+			"identifier": "get_scan/schema.py",
+			"hash": "9d6c620e5fa33b262828da73318b2288"
+		},
+		{
+			"identifier": "get_scan_config/schema.py",
+			"hash": "1ef840fb088d3d45fafc50403413b217"
+		},
+		{
+			"identifier": "get_scan_configs/schema.py",
+			"hash": "fcc22b92ee88aa989b60bfb75fe960ee"
+		},
+		{
+			"identifier": "get_scan_engine_events/schema.py",
+			"hash": "c70e7301d9190000c6f90c194af92095"
+		},
+		{
+			"identifier": "get_scan_execution_details/schema.py",
+			"hash": "c33df73fafacc7c39fbf556a4e88469e"
+		},
+		{
+			"identifier": "get_scan_platform_events/schema.py",
+			"hash": "efa9b9a98de8511b0c1378b79491f67a"
+		},
+		{
+			"identifier": "get_scans/schema.py",
+			"hash": "8834bd31bb1db2968db76894a31d6de8"
+		},
+		{
+			"identifier": "get_vulnerabilities/schema.py",
+			"hash": "8ef9cd4db22bcff99378ba050e74f5b1"
+		},
+		{
+			"identifier": "get_vulnerability/schema.py",
+			"hash": "93671153c378bde70dcb44371eed144e"
+		},
+		{
+			"identifier": "get_vulnerability_discoveries/schema.py",
+			"hash": "6b7c2b7c19ed01b129e01d1da1ba6712"
+		},
+		{
+			"identifier": "get_vulnerability_discovery/schema.py",
+			"hash": "23ed9ba1306a12724c132e3ea9e67caf"
+		},
+		{
+			"identifier": "submit_scan/schema.py",
+			"hash": "3540115be0217bb46aa629e3a05c2f03"
+		},
+		{
+			"identifier": "submit_scan_action/schema.py",
+			"hash": "5b36a8dd02fc04023cf046e092ccc1bc"
+		},
+		{
+			"identifier": "update_scan_config/schema.py",
+			"hash": "02c057a10bc44a3d667632b6eb1a4313"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "da2a314d80baf6cfd606476b253b1100"
+		},
+		{
+			"identifier": "new_vulnerabilities/schema.py",
+			"hash": "93cc293ef2e6433cde53b9f3558487e5"
+		}
+	]
+}

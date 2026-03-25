@@ -1,0 +1,785 @@
+plugin_spec_version: v2
+extension: plugin
+products: [insightconnect]
+name: jira
+title: Jira
+vendor: rapid7
+support: rapid7
+status: []
+description: '[Jira](https://www.atlassian.com/software/jira) is an issue tracking
+  product developed by Atlassian that allows teams to plan, track, and release great
+  software. This plugin uses the [Jira REST API](https://developer.atlassian.com/cloud/jira/platform/rest/v2/)
+  to programmatically manage and create issues and users. The Jira plugin supports
+  cloud (only with InsightConnect cloud connections) and on-premise versions of Jira
+  Software, Jira Server, and Jira ServiceDesk products from Atlassian'
+version: 6.7.0
+connection_version: 6
+supported_versions: [Jira Server 6.0, Jira (Cloud), Jira ServiceDesk (Cloud)]
+cloud_ready: true
+fedramp_ready: true
+resources:
+  source_url: https://github.com/rapid7/insightconnect-plugins/tree/master/plugins/jira
+  license_url: https://github.com/rapid7/insightconnect-plugins/blob/master/LICENSE
+  vendor_url: https://www.atlassian.com
+  docs_url: https://docs.rapid7.com/insightconnect/jira
+tags:
+- ticket
+- Jira
+hub_tags:
+  use_cases: [remediation_management, threat_detection_and_response, reporting_and_analytics]
+  keywords: [ticketing, jira, cloud_enabled]
+  features: []
+sdk:
+  type: slim
+  version: 6.4.3
+  user: nobody
+  custom_cmd:
+  - ENV CRYPTOGRAPHY_DONT_BUILD_RUST=1
+key_features:
+- Create, find, edit, comment, and generally manage your Jira tickets through the
+  Jira REST API to expedite operations
+- (Re-)Assign issues to users to orchestrate operations
+- Find and create new users in your Jira instance to automate account provisioning
+requirements:
+- URL for Jira Software, Jira Server, or Jira ServiceDesk
+- Jira user email address and API key when using Jira Cloud (Only JIRA cloud is supported
+  with InsightConnect cloud connections.)
+- Jira username and password credentials when using on-prem Jira server
+troubleshooting:
+- Please note only Jira cloud is supported with InsightConnect cloud. For JIRA OnPrem,
+  please use an orchestrator for connecting.
+version_history:
+- "6.7.0 - Added OAuth 2.0 (client credentials) authentication | Actions `Edit Issue`, `Label Issue`, `Find Issues`: Fixed issues related to the custom field option, attachments | Updated SDK to the latest version (6.4.3)"
+- 6.6.1 - Updated SDK to the latest version (6.4.2)
+- 6.6.0 - Updated plugin to use Jira Cloud API v3 endpoints for cloud instances |
+  Updated SDK to the latest version (6.4.1)
+- 6.5.3 - Updated SDK to the latest version (6.3.10)
+- 6.5.2 - Updated SDK to the latest version (6.3.3)
+- 6.5.1 - Updated normalizing user object | Updated SDK to the latest version
+- 6.5.0 - Cloud enable the plugin | Bump SDK version to 6.1.0 | Added an error message
+  if trying to connect to Jira on-prem for ICON cloud
+- 6.4.0 - Fix Issue Where Create Issue failed when multiple versions of the input
+  Issue Type exists in Jira | Fix failed connection test response for PAT based connection
+  | Include Fields input added to New Issue and Monitor Issues triggers, to specify
+  whether to return Issue fields in the output | Removed empty Fields output from
+  returned Issues when not requested or available
+- 6.3.0 - Add PAT authentication scheme for Jira on-prem
+- 6.2.1 - Fix issue in Find Issues action where normalize_user has an attribute error
+  for labels | Changed Dockerfile to don't use slim version
+- 6.2.0 - Fix issue in Get Comments actions where normalize_user is missing the is_cloud
+  argument from client connection
+- 6.1.1 - Fix issue where attachments added in tickets were empty
+- 6.1.0 - Add Monitor Issues trigger | Update New Issue trigger to only trigger in
+  case of recently created tickets | Change `required` property to false for `project`
+  input in New Issue trigger | Fix issue in New Issue trigger to include all results
+  that match JQL | Fix issue in New Issue trigger with retrieving attachments
+- 6.0.8 - Fix issue where exception type was wrong in Create Issue
+- 6.0.7 - Fix issue in Create Issue and Attach Issue actions where adding attachments
+  failed
+- 6.0.6 - Fix build issue
+- 6.0.5 - Add more documentation on authentication
+- 6.0.4 - Update to v4 Python plugin runtime
+- 6.0.3 - Add `docs_url` to plugin spec with link to [plugin setup guide](https://docs.rapid7.com/insightconnect/jira)
+- 6.0.2 - Fix in Comment Issue action where the Python module attributes were logged
+  | Remove duplicate ConnectionTestException call from Connection Test
+- 6.0.1 - Update documentation to include supported Jira products
+- 6.0.0 - Update Create User, Delete User and Find Users to reflect [Jira Cloud API
+  privacy changes](https://developer.atlassian.com/cloud/jira/platform/api-changes-for-user-privacy-announcement/)
+  to support `accountId` | Fix issue in connection test where the error was logged
+  but did not fail for users | Update connection schema to match the API key and username
+  inputs
+- 5.0.0 - Fix user enumeration  in `Find Users` | Add example input | Update titles
+  of Attachment Filename input in Attach Issue action and Poll Timeout input in New
+  Issue trigger to match style
+- 4.0.2 - Moved `apk add` in Dockerfile to use cache | Changed bare strings in params.get
+  and output to static fields from schema | Remove duplicated code in actions | Changed
+  `Exception` to `PluginException`
+- 3.2.1 - Update Get Issue, Find Issues and New Issue action to support a Get Attachments
+  option
+- 3.2.0 - Update Transition Issue action to allow for assignment of fields during
+  issue transition
+- 3.1.2 - Update Create Issue action to remove newlines from summaries
+- 3.1.1 - Update connection input labels to reflect Jira API changes
+- 3.1.0 - Added new Edit Issue action
+- 3.0.5 - Fix issue where description in Get Issue action would return None if description
+  was left empty
+- 3.0.4 - Improve error handling by checking for known issue type before creating
+  ticket in Create Issue action
+- 3.0.3 - Implement new connection test messaging
+- 3.0.2 - Update action and trigger descriptions
+- 3.0.1 - Fix issue where the New Issue trigger and Create Issue action may not output
+  properly
+- 3.0.0 - Rename 'Attach Issue' action to 'Add Attachment to Issue' | Update 'Create
+  Issue' action description to include note about case sensitivity | Update 'Create
+  Issue' action and 'New Issue' trigger to use uniform 'Issue' output type | Fix issue
+  where attachments were not being uploaded properly | Fix issue where trigger could
+  fail with an empty ticket description
+- 2.0.1 - Fix issue where test method is missing in Create Issue action
+- 2.0.0 - Support web server mode
+- 1.0.4 - Update to v2 Python plugin architecture
+- 1.0.3 - Fix custom fields adding to Create Issue request
+- 1.0.2 - Fix custom fields input in Create Issue
+- 1.0.1 - SSL bug fix in SDK
+- '1.0.0 - Fix action: Create Issue'
+- '0.2.2 - Fix action: Find Issue'
+- 0.1.0 - Initial plugin
+links:
+- '[Jira](https://www.atlassian.com/software/jira)'
+references:
+- '[Jira](https://www.atlassian.com/software/jira)'
+types:
+  user:
+    accountId:
+      type: string
+      title: Account ID
+      description: User account ID
+      required: false
+    name:
+      type: string
+      description: User name
+      required: false
+    email_address:
+      type: string
+      description: User's email address
+      required: false
+    display_name:
+      type: string
+      description: User's display name
+      required: false
+    active:
+      type: boolean
+      description: Whether the user is active
+      required: false
+  comment:
+    id:
+      type: string
+      description: Comment ID
+      required: false
+    body:
+      type: string
+      description: Body of comment
+      required: false
+    author:
+      description: Author
+      type: user
+      required: false
+  issue:
+    id:
+      type: string
+      description: Issue ID
+      required: false
+    project:
+      type: string
+      description: Project
+      required: false
+    key:
+      type: string
+      description: Issue Key
+      required: false
+    status:
+      type: string
+      description: Status
+      required: false
+    url:
+      type: string
+      description: Issue URL
+      required: false
+    summary:
+      type: string
+      description: Summary
+      required: false
+    description:
+      type: string
+      description: Description
+      required: false
+    resolution:
+      type: string
+      description: Resolution
+      required: false
+    labels:
+      type: '[]string'
+      description: Labels
+      required: false
+    reporter:
+      type: string
+      description: Reporting User
+      required: false
+    assignee:
+      type: string
+      description: Assigned User
+      required: false
+    created_at:
+      type: string
+      description: Created At
+      required: false
+    updated_at:
+      type: string
+      description: Updated At
+      required: false
+    resolved_at:
+      type: string
+      description: Resolved At
+      required: false
+    attachments:
+      type: '[]file'
+      description: Attachments
+      required: false
+    fields:
+      type: object
+      description: Full list of fields
+      required: false
+connection:
+  url:
+    title: URL
+    type: string
+    description: Jira instance URL. Use https://example.atlassian.net for Jira Cloud, https://api.atlassian.com for OAuth 2.0 with Cloud ID (https://api.atlassian.com/ex/jira/{cloudId}), or your organization's URL for on-prem Jira Server
+    required: false
+    default: https://example.atlassian.net
+    example: https://example.atlassian.net
+  user:
+    title: User
+    type: string
+    description: Jira user email when connecting to Jira Cloud or Jira username when
+      connecting to on-prem Jira server
+    required: false
+    example: user@example.com
+  api_key:
+    title: API Key
+    type: credential_secret_key
+    description: Jira API key when connecting to Jira Cloud or Jira user password
+      when connecting to on-prem Jira server
+    required: false
+    example: 9de5069c5afe602b2ea0a04b66beb2c0
+  pat:
+    title: Personal Access Token
+    type: credential_secret_key
+    description: Jira Personal Access Token, only works with the on-prem Jira Server
+    required: false
+    example: 9de5069c5afe602b2ea0a04b66beb2c0
+  client_id:
+    title: Client ID
+    type: string
+    description: Jira OAuth 2.0 Client ID, only works with Jira Cloud
+    required: false
+    example: 9de5069c5afe602b2ea0a04b66beb2c0
+  client_secret:
+    title: Client Secret
+    type: credential_secret_key
+    description: Jira OAuth 2.0 Client Secret, only works with Jira Cloud
+    required: false
+    example: 9de5069c5afe602b2ea0a04b66beb2c0
+actions:
+  transition_issue:
+    title: Transition Issue
+    description: Transition an issue
+    input:
+      id:
+        title: ID
+        type: string
+        description: Issue ID
+        required: true
+        example: 10001
+      transition:
+        title: Transition
+        type: string
+        description: ID or name of transition to perform, e.g. In Progress
+        required: true
+        example: 31
+      comment:
+        title: Comment
+        type: string
+        description: Comment to add
+        required: false
+        example: Transition executed by InsightConnect
+      fields:
+        title: Fields
+        type: object
+        description: 'Custom fields to assign. Fields used must be present on the
+          screen used for project, issue, and transition type e.g: { "field1": { "attribute1":
+          "value1" }, "field2": { "attribute2": "value2" }}'
+        required: false
+        example: '{ "fields": { "project": { "key": "TEST" }, "summary": "Test Ticket",
+          "description": "Test ticket created from InsightConnect", "issuetype": {
+          "name": "Story" } } }'
+    output:
+      success:
+        title: Success
+        type: boolean
+        description: True if successful
+        required: false
+        example: true
+  find_issues:
+    title: Find Issues
+    description: Search for issues
+    input:
+      jql:
+        title: JQL
+        type: string
+        description: JQL search string to use
+        required: true
+        example: project = "TEST"
+      max:
+        title: Max
+        type: integer
+        description: Max results to return
+        default: 10
+        required: true
+        example: 10
+      get_attachments:
+        title: Get Attachments
+        description: Get attachments from issue
+        required: false
+        type: boolean
+        default: false
+        example: true
+    output:
+      issues:
+        title: Issues
+        type: '[]issue'
+        required: false
+        description: The list of found issues
+        example: '[{"id": 1}, {"id": 2}]'
+  assign_issue:
+    title: Assign Issue
+    description: Assign an issue to a user
+    input:
+      id:
+        title: ID
+        type: string
+        description: Issue ID
+        required: true
+        example: 10001
+      assignee:
+        title: Assignee
+        type: string
+        description: Username of assignee
+        required: true
+        example: user1
+    output:
+      success:
+        title: Success
+        type: boolean
+        description: True if successful
+        required: false
+        example: true
+  label_issue:
+    title: Label Issue
+    description: Label issue
+    input:
+      id:
+        title: ID
+        type: string
+        description: Issue ID
+        required: true
+        example: 10001
+      label:
+        title: Label
+        type: string
+        description: Label to add. To add multiple labels, separate by commas
+        required: true
+        example: documentation
+    output:
+      success:
+        title: Success
+        type: boolean
+        description: True if successful
+        required: false
+        example: true
+  get_comments:
+    title: Get Comments
+    description: Retrieve all comments on an issue
+    input:
+      id:
+        title: ID
+        type: string
+        description: Issue ID
+        required: true
+        example: TEST-1
+    output:
+      count:
+        title: Count
+        type: integer
+        description: Count of comments found
+        required: false
+        example: 3
+      comments:
+        title: Comments
+        type: '[]comment'
+        description: Comments list
+        required: false
+        example: '[{"id": 1}, {"id": 2}]'
+  comment_issue:
+    title: Comment Issue
+    description: Comment on an issue
+    input:
+      id:
+        title: ID
+        type: string
+        description: Issue ID
+        required: true
+        example: 10001
+      comment:
+        title: Comment
+        type: string
+        description: Comment to add
+        required: true
+        example: This comment was added by InsightConnect
+    output:
+      comment_id:
+        title: Comment ID
+        type: string
+        description: Comment ID
+        required: false
+        example: 1234-abcd
+  get_issue:
+    title: Get Issue
+    description: Retrieve an issue
+    input:
+      id:
+        title: ID
+        type: string
+        description: Issue ID
+        required: true
+        example: TEST-1
+      get_attachments:
+        title: Get Attachments
+        description: Get attachments from issue
+        required: false
+        type: boolean
+        default: false
+        example: true
+    output:
+      found:
+        title: Found
+        type: boolean
+        description: True if found
+        required: false
+        example: true
+      issue:
+        title: Issue
+        type: issue
+        description: Found issue
+        required: false
+        example: '{"id": 2}'
+  find_users:
+    title: Find Users
+    description: Search for a set of users
+    input:
+      query:
+        title: Query
+        type: string
+        description: Query String, e.g. Joe
+        required: true
+        example: Joe
+      max:
+        title: Max
+        type: integer
+        description: Max results to return
+        default: 10
+        required: true
+        example: 10
+    output:
+      users:
+        title: Users
+        type: '[]user'
+        required: false
+        description: The list of found users
+        example: '[{"id": 1}]'
+  delete_user:
+    title: Delete User
+    description: Delete a user account
+    input:
+      username:
+        title: Username
+        type: string
+        description: Username
+        required: false
+        example: user1
+      account_id:
+        title: Account ID
+        type: string
+        description: Unique identifier for an Atlassian account
+        required: false
+        example: 5ec00968833be70b7e50df20
+    output:
+      success:
+        title: Success
+        type: boolean
+        description: True if successful
+        required: false
+        example: true
+  create_user:
+    title: Create User
+    description: Create a user account
+    input:
+      username:
+        title: Username
+        type: string
+        description: Username
+        required: false
+        example: user1
+      email:
+        title: Email
+        type: string
+        description: Email
+        required: true
+        example: user@example.com
+      password:
+        title: Password
+        type: string
+        description: Password
+        required: false
+        example: mypassword
+      notify:
+        title: Notify
+        type: boolean
+        description: Notify if true
+        default: false
+        required: true
+        enum:
+        - true
+        - false
+        example: true
+      products:
+        title: Products
+        type: array
+        description: Products the new user has access to
+        required: false
+        example: [jira-core, jira-servicedesk, jira-product-discovery, jira-software]
+    output:
+      success:
+        title: Success
+        type: boolean
+        description: True if successful
+        required: false
+        example: true
+  attach_issue:
+    title: Add Attachment to Issue
+    description: Add an attachment to an issue in Jira
+    input:
+      id:
+        title: ID
+        type: string
+        description: Issue ID
+        required: true
+        example: 10001
+      attachment_bytes:
+        title: Attachment Bytes
+        type: bytes
+        description: Attachment bytes
+        required: true
+        example: TVqQAAMAAAAEAAAA//8AALgAAAAAAA...
+      attachment_filename:
+        title: Attachment Filename
+        type: string
+        description: Attachment filename. Must end with a filetype extension if possible
+        required: true
+        example: document.pdf
+    output:
+      id:
+        title: ID
+        type: string
+        description: ID of attachment
+        required: false
+        example: 1234-abcd
+  create_issue:
+    title: Create Issue
+    description: Create an issue in Jira
+    input:
+      summary:
+        title: Summary
+        type: string
+        description: Issue summary
+        required: false
+        example: Connect Jira to InsightConnect
+      type:
+        title: Type
+        type: string
+        description: Issue type. Typical issues type include Task, Story, Epic, Bug.
+          You can also specify a custom issue type. This input is case-sensitive
+        default: Task
+        required: false
+        example: Story
+      description:
+        title: Description
+        type: string
+        description: Issue description
+        required: false
+        default: ''
+        example: Successfully connect Jira to InsightConnect to automate ticket management
+      project:
+        title: Project
+        description: Project ID
+        type: string
+        required: true
+        example: TEST
+      fields:
+        title: Fields
+        type: object
+        description: Custom fields to assign. Fields used must be present on the same
+          screen as the Create screen in Jira
+        required: false
+        example: '{ "fields": { "project": { "key": "TEST" }, "summary": "Test Ticket",
+          "description": "Test ticket created from InsightConnect", "issuetype": {
+          "name": "Story" } } }'
+      attachment_bytes:
+        title: Attachment Bytes
+        type: bytes
+        description: Attachment bytes
+        required: false
+        example: TVqQAAMAAAAEAAAA//8AALgAAAAAAA...
+      attachment_filename:
+        title: Attachment Filename
+        type: string
+        description: Attachment filename
+        required: false
+        example: document.pdf
+    output:
+      issue:
+        title: Issue
+        type: issue
+        description: Created issue
+        required: false
+        example: '{"id": 3}'
+  edit_issue:
+    title: Edit Issue
+    description: Edit an issue within Jira
+    input:
+      id:
+        title: ID
+        description: Issue ID
+        type: string
+        required: true
+        example: TEST-1
+      notify:
+        title: Notify
+        description: Will send a notification email about the issue updated. Admin
+          and project admins credentials need to be used to disable the notification
+        type: boolean
+        required: true
+        default: true
+        example: true
+      summary:
+        title: Summary
+        description: Summary field on the issue
+        type: string
+        required: false
+        example: Connect Jira to InsightConnect for Multiple Teams
+      description:
+        title: Description
+        description: Description field on the issue
+        type: string
+        required: false
+        example: Update ticket with additional Jira information for others teams wanting
+          to leverage InsightConnect
+      fields:
+        title: Fields
+        description: An object of fields and values to change
+        type: object
+        required: false
+        example: '{ "fields": { "project": { "key": "TEST" }, "summary": "Test Ticket",
+          "description": "Test ticket created from InsightConnect", "issuetype": {
+          "name": "Story" } } }'
+      update:
+        title: Update
+        description: An object that contains update operations to apply, see examples
+          at https://developer.atlassian.com/server/jira/platform/updating-an-issue-via-the-jira-rest-apis-6848604/
+        type: object
+        required: false
+        example: '{ "update": { "labels": [ {"add": "newlabel"} ] } }'
+    output:
+      success:
+        title: Success
+        description: If changes were successful
+        type: boolean
+        required: false
+        example: true
+triggers:
+  new_issue:
+    title: New Issue
+    description: Trigger which indicates that a new issue has been created
+    input:
+      project:
+        title: Project
+        description: Project ID or name
+        type: string
+        required: false
+        example: TEST
+      jql:
+        title: JQL
+        type: string
+        description: JQL search string to use
+        required: false
+        example: project = 'TEST'
+      get_attachments:
+        title: Get Attachments
+        description: Get attachments from issue
+        required: false
+        type: boolean
+        default: false
+        example: true
+      poll_timeout:
+        title: Poll Timeout
+        description: Timeout between next poll, default 60
+        required: false
+        type: integer
+        default: 60
+        example: 60
+      include_fields:
+        title: Include Fields
+        description: Whether returned Issues should include fields
+        required: false
+        type: boolean
+        default: false
+        example: true
+    output:
+      issue:
+        title: Issue
+        type: issue
+        description: New issue
+        required: false
+        example: '{"id": 4}'
+  monitor_issues:
+    title: Monitor Issues
+    description: Watches for newly-created or updated issues
+    input:
+      projects:
+        title: Projects
+        description: List of Project IDs or names
+        type: '[]string'
+        required: false
+        example: TEST
+      jql:
+        title: JQL
+        type: string
+        description: JQL search string to use
+        required: false
+        example: reporter='Example User'
+      get_attachments:
+        title: Get Attachments
+        description: Get attachments from issue
+        required: false
+        type: boolean
+        default: false
+        example: true
+      interval:
+        title: Interval
+        description: Interval between next poll in seconds, default is 60 seconds
+        required: false
+        type: integer
+        default: 60
+        example: 60
+      include_fields:
+        title: Include Fields
+        description: Whether returned Issues should include fields
+        required: false
+        type: boolean
+        default: false
+        example: true
+    output:
+      issue:
+        title: Issue
+        type: issue
+        description: New or updated issue
+        required: false
+        example: '{"id": 5}'

@@ -1,0 +1,47 @@
+{
+	"spec": "d37d3cd9c64cbe7c1b835e03a934d441",
+	"manifest": "cef6b12e25ef2b28a6888a005302d99c",
+	"setup": "11926308b0712939293ede2568cdf3d2",
+	"schemas": [
+		{
+			"identifier": "add_to_datetime/schema.py",
+			"hash": "b9f3c2e987c6dbdaaf3909c22f4cef84"
+		},
+		{
+			"identifier": "date_from_epoch/schema.py",
+			"hash": "d19f3718248ed7beb925fa73ad85b734"
+		},
+		{
+			"identifier": "epoch_from_date/schema.py",
+			"hash": "45b0ee7f84a15115114e20ded0047f27"
+		},
+		{
+			"identifier": "get_datetime/schema.py",
+			"hash": "9709b5c62cd2ea4dae291ceb0d475b95"
+		},
+		{
+			"identifier": "get_future_time/schema.py",
+			"hash": "ce41eb2723bf30593f3a6f34920a85cf"
+		},
+		{
+			"identifier": "subtract_from_datetime/schema.py",
+			"hash": "40cc232fbce2410a98dec737989a2ec3"
+		},
+		{
+			"identifier": "time_elapsed/schema.py",
+			"hash": "d366df9d9c3898ae5743b48659d1ef53"
+		},
+		{
+			"identifier": "to_localtime/schema.py",
+			"hash": "706edbbd2a99daa99302abad24186f87"
+		},
+		{
+			"identifier": "to_utc/schema.py",
+			"hash": "a7df39930d04cf4f78252b780c09d407"
+		},
+		{
+			"identifier": "connection/schema.py",
+			"hash": "2a983a9b7aa5dd290ed28e0eb7e0c9c6"
+		}
+	]
+}
